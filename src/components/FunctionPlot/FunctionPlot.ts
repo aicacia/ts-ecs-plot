@@ -90,8 +90,7 @@ export class FunctionPlot extends Component {
             current = [nextPoint];
             out.push(current);
 
-            n += 1;
-            asymptote = fAsymptote(n);
+            asymptote = fAsymptote(++n);
           } else if (a[0] < asymptote) {
             current.push(a);
           }
@@ -99,7 +98,7 @@ export class FunctionPlot extends Component {
 
         return out;
       })
-      .unwrapOr([points]);
+      .unwrapOrElse(() => [points]);
   }
 
   getPoints(minX: number, maxX: number, step = 1): vec2[] {

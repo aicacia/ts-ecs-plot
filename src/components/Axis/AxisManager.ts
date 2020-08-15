@@ -1,5 +1,15 @@
 import { DefaultManager } from "../../../../ts-engine/src";
 
-export class AxisManager extends DefaultManager<Axis> {}
+export class AxisManager extends DefaultManager<Axis> {
+  onInit() {
+    return this;
+  }
+  onUpdate() {
+    return this;
+  }
+  onAfterUpdate() {
+    return this;
+  }
+}
 
 import { Axis } from "./Axis";
