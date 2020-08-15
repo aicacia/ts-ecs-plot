@@ -83,20 +83,16 @@ function onLoad() {
         new Entity()
           .addTag("camera")
           .addComponent(
-            new Transform2D(),
+            new Transform2D().setLocalScale(vec2.fromValues(9, 9)),
             new Camera2DControl(),
-            new Camera2D()
-              .setSize(1)
-              .setMinSize(1)
-              .setMaxSize(16)
-              .setBackground(vec3.fromValues(0.98, 0.98, 0.98))
+            new Camera2D().setBackground(vec3.fromValues(0.98, 0.98, 0.98))
           ),
-        new Entity().addTag("function").addComponent(
-          new Transform2D(),
-          new FunctionPlot((x) => Math.tan(x)).setFAsymptote(
-            (n) => HALF_PI + Math.PI * n
-          )
-        ),
+        // new Entity().addTag("function").addComponent(
+        //   new Transform2D(),
+        //   new FunctionPlot((x) => Math.tan(x)).setFAsymptote(
+        //     (n) => HALF_PI + Math.PI * n
+        //   )
+        // ),
         new Entity()
           .addTag("static-line")
           .addComponent(
