@@ -1,5 +1,5 @@
 import { Option, some, none } from "@aicacia/core";
-import { Component, EPSILON } from "../../../../ts-engine/src";
+import { Component, EPSILON } from "@aicacia/engine";
 import { FunctionPlotManager } from "./FunctionPlotManager";
 import { vec2, vec4 } from "gl-matrix";
 import { LineType } from "../Line";

@@ -3,7 +3,7 @@ import {
   CtxRendererHandler,
   toRgba,
   TransformComponent,
-} from "../../../../ts-engine/src";
+} from "@aicacia/engine";
 import { LineManager, LineType } from "../../components/Line";
 
 const MAT2D_0 = mat2d.create();

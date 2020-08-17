@@ -1,4 +1,4 @@
-import { DefaultManager } from "../../../../ts-engine/src";
+import { DefaultManager } from "@aicacia/engine";
 
 export class FunctionPlotManager extends DefaultManager<FunctionPlot> {
   onInit() {

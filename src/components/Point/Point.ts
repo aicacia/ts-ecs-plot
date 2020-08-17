@@ -1,5 +1,5 @@
 import { vec4 } from "gl-matrix";
-import { Component } from "../../../../ts-engine/src";
+import { Component } from "@aicacia/engine";
 import { PointManager } from "./PointManager";
 
 export enum PointType {

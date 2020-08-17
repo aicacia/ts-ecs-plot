@@ -1,5 +1,5 @@
 import { vec2, vec4 } from "gl-matrix";
-import { Component, TransformComponent } from "../../../../ts-engine/src";
+import { Component, TransformComponent } from "@aicacia/engine";
 import { LineManager } from "./LineManager";
 
 const VEC2_0 = vec2.create();

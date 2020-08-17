@@ -3,7 +3,7 @@ import {
   Component,
   getAngleFromPoint,
   TransformComponent,
-} from "../../../../ts-engine/src";
+} from "@aicacia/engine";
 import { ArcManager } from "./ArcManager";
 
 export enum Direction {

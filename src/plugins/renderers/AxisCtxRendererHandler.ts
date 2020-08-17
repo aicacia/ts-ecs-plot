@@ -3,7 +3,7 @@ import {
   CtxRendererHandler,
   toRgba,
   TransformComponent,
-} from "../../../../ts-engine/src";
+} from "@aicacia/engine";
 import { AxisManager } from "../../components/Axis";
 
 const VEC2_0 = vec2.create();

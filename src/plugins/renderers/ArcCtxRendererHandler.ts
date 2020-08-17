@@ -1,11 +1,11 @@
 import { mat2d } from "gl-matrix";
 import {
+  HALF_PI,
   CtxRendererHandler,
   toRgba,
   TransformComponent,
-} from "../../../../ts-engine/src";
+} from "@aicacia/engine";
 import { ArcManager, Direction } from "../../components/Arc";
-import { HALF_PI } from "../../../../ts-engine/src/math";
 
 const MAT2D_0 = mat2d.create();
 

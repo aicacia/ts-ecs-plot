@@ -8,7 +8,6 @@
   },
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "module": "./src/index.ts",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run clean && npm run build",
@@ -28,7 +27,6 @@
   "license": "(MIT OR Apache-2.0)",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "@types/gl-matrix": "^2.4.5",
     "@types/tape": "^4.13.0",
     "@typescript-eslint/eslint-plugin": "^3.9.0",
     "@typescript-eslint/parser": "^3.9.0",
@@ -47,6 +45,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
+    "@aicacia/engine": "git+https://git@gitlab.com/aicacia/libs/ts-engine",
     "@aicacia/core": "^0.1.6",
     "@aicacia/hash": "^0.1.4",
     "@aicacia/json": "^0.1.3",

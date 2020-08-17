@@ -1,0 +1,30 @@
+import { vec4 } from "gl-matrix";
+import { Component } from "@aicacia/engine";
+import { AxisManager } from "./AxisManager";
+export declare class Axis extends Component {
+    static Manager: typeof AxisManager;
+    private xColor;
+    private yColor;
+    private size;
+    private lineWidth;
+    private showTicks;
+    private showNumbers;
+    private numberSize;
+    private tickSize;
+    getSize(): number;
+    setSize(size: number): this;
+    getXColor(): import("gl-matrix").mat2;
+    setXColor(xColor: vec4): this;
+    getYColor(): import("gl-matrix").mat2;
+    setYColor(yColor: vec4): this;
+    getLineWidth(): number;
+    setLineWidth(lineWidth: number): this;
+    getShowTicks(): boolean;
+    setShowTicks(showTicks: boolean): this;
+    getShowNumbers(): boolean;
+    setShowNumbers(showNumbers: boolean): this;
+    getNumberSize(): number;
+    setNumberSize(numberSize: number): this;
+    getTickSize(): number;
+    setTickSize(tickSize: number): this;
+}

@@ -3,7 +3,7 @@ import {
   CtxRendererHandler,
   toRgba,
   TransformComponent,
-} from "../../../../ts-engine/src";
+} from "@aicacia/engine";
 import { PointManager, PointType } from "../../components/Point";
 
 const MAT2D_0 = mat2d.create();

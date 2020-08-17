@@ -3,7 +3,7 @@ import {
   CtxRendererHandler,
   toRgba,
   TransformComponent,
-} from "../../../../ts-engine/src";
+} from "@aicacia/engine";
 import { FunctionPlotManager } from "../../components/FunctionPlot";
 import { LineType } from "../../components";
 import {

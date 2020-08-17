@@ -13,7 +13,7 @@ import {
   Time,
   Transform2D,
   HALF_PI,
-} from "../../../ts-engine/src";
+} from "@aicacia/engine";
 import {
   Arc,
   ArcCtxRendererHandler,
