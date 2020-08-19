@@ -36,6 +36,7 @@ export class AxisCtxRendererHandler extends CtxRendererHandler {
           const size = axis.getSize(),
             showTicks = axis.getShowTicks(),
             showNumbers = axis.getShowNumbers(),
+            numbersEvery = axis.getNumbersEvery(),
             tickSize = axis.getTickSize(),
             halfTickSize = tickSize * 0.5,
             quaterTickSize = tickSize * 0.25;
@@ -52,14 +53,15 @@ export class AxisCtxRendererHandler extends CtxRendererHandler {
               x < xl;
               x += size
             ) {
+              const current = positionX + x;
               if (showTicks) {
                 ctx.moveTo(x, -halfTickSize);
                 ctx.lineTo(x, halfTickSize);
               }
-              if (showNumbers) {
+              if (showNumbers && current % numbersEvery === 0) {
                 ctx.scale(1, -1);
                 ctx.fillText(
-                  (positionX + x).toString(),
+                  current.toString(),
                   x + quaterTickSize,
                   -quaterTickSize
                 );
@@ -80,17 +82,18 @@ export class AxisCtxRendererHandler extends CtxRendererHandler {
               y < yl;
               y += size
             ) {
+              const current = positionY + y;
               ctx.save();
               ctx.translate(0, y);
               if (showTicks) {
                 ctx.moveTo(-halfTickSize, 0);
                 ctx.lineTo(halfTickSize, 0);
               }
-              if (showNumbers) {
+              if (showNumbers && current % numbersEvery === 0) {
                 ctx.save();
                 ctx.scale(1, -1);
                 ctx.fillText(
-                  (positionY + y).toString(),
+                  current.toString(),
                   quaterTickSize,
                   -quaterTickSize
                 );

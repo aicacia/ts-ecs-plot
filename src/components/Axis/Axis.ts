@@ -13,6 +13,7 @@ export class Axis extends Component {
   private showNumbers = true;
   private numberSize = 0.75;
   private tickSize = 0.25;
+  private numbersEvery = 1;
 
   getSize() {
     return this.size;
@@ -75,6 +76,17 @@ export class Axis extends Component {
   }
   setTickSize(tickSize: number) {
     this.tickSize = tickSize;
+    return this;
+  }
+
+  getNumbersEvery() {
+    return this.numbersEvery;
+  }
+  setNumbersEvery(numbersEvery: number) {
+    if (numbersEvery <= 0) {
+      numbersEvery = 1;
+    }
+    this.numbersEvery = numbersEvery;
     return this;
   }
 }

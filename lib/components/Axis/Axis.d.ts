@@ -11,6 +11,7 @@ export declare class Axis extends Component {
     private showNumbers;
     private numberSize;
     private tickSize;
+    private numbersEvery;
     getSize(): number;
     setSize(size: number): this;
     getXColor(): import("gl-matrix").mat2;
@@ -27,4 +28,6 @@ export declare class Axis extends Component {
     setNumberSize(numberSize: number): this;
     getTickSize(): number;
     setTickSize(tickSize: number): this;
+    getNumbersEvery(): number;
+    setNumbersEvery(numbersEvery: number): this;
 }

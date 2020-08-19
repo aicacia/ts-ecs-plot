@@ -75,10 +75,8 @@ function onLoad() {
   const canvas = new Canvas().set(512, 512),
     scene = new Scene()
       .addEntity(
-        // axis
-        new Entity().addComponent(new Axis()),
-        // grid
-        new Entity().addComponent(new Grid()),
+        // axis and grid
+        new Entity().addComponent(new Axis().setNumbersEvery(5), new Grid()),
         // Camera setup
         new Entity()
           .addTag("camera")
