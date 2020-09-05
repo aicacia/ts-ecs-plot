@@ -2,9 +2,7 @@ import { vec2, vec3, vec4 } from "gl-matrix";
 import {
   Camera2D,
   Camera2DControl,
-  Canvas,
   Component,
-  CtxRenderer,
   Entity,
   getPointFromAngle,
   Input,
@@ -15,22 +13,29 @@ import {
   HALF_PI,
 } from "@aicacia/engine";
 import {
+  WebCanvas,
+  CtxRenderer,
+  WebEventListener,
+} from "@aicacia/engine/lib/web";
+import {
   Arc,
-  ArcCtxRendererHandler,
   Axis,
-  AxisCtxRendererHandler,
   Direction,
   Grid,
-  GridCtxRendererHandler,
   FunctionPlot,
-  FunctionPlotCtxRendererHandler,
   Line,
-  LineCtxRendererHandler,
   LineType,
   Point,
-  PointCtxRendererHandler,
   PointType,
 } from "../../src";
+import {
+  ArcCtxRendererHandler,
+  AxisCtxRendererHandler,
+  GridCtxRendererHandler,
+  FunctionPlotCtxRendererHandler,
+  LineCtxRendererHandler,
+  PointCtxRendererHandler,
+} from "../../src/web";
 
 class Rotator extends Component {
   static requiredPlugins = [Time];
@@ -72,7 +77,7 @@ class ArcHandler extends Component {
 }
 
 function onLoad() {
-  const canvas = new Canvas().set(512, 512),
+  const canvas = new WebCanvas().set(512, 512),
     scene = new Scene()
       .addEntity(
         // axis and grid
@@ -85,12 +90,12 @@ function onLoad() {
             new Camera2DControl(),
             new Camera2D().setBackground(vec3.fromValues(0.98, 0.98, 0.98))
           ),
-        // new Entity().addTag("function").addComponent(
-        //   new Transform2D(),
-        //   new FunctionPlot((x) => Math.tan(x)).setFAsymptote(
-        //     (n) => HALF_PI + Math.PI * n
-        //   )
-        // ),
+        new Entity().addTag("function").addComponent(
+          new Transform2D(),
+          new FunctionPlot((x) => Math.tan(x)).setFAsymptote(
+            (n) => HALF_PI + Math.PI * n
+          )
+        ),
         new Entity()
           .addTag("static-line")
           .addComponent(
@@ -138,7 +143,10 @@ function onLoad() {
       )
       .addPlugin(
         // Handles all rendering
-        new CtxRenderer(canvas.getElement()).addRendererHandlers(
+        new CtxRenderer(
+          canvas,
+          canvas.getElement().getContext("2d")
+        ).addRendererHandlers(
           new ArcCtxRendererHandler(),
           new AxisCtxRendererHandler(),
           new GridCtxRendererHandler(),
@@ -149,7 +157,7 @@ function onLoad() {
         // Required by many Components and plugins
         new Time(),
         // Handles all input
-        new Input(canvas.getElement())
+        new Input().addEventListener(new WebEventListener(canvas.getElement()))
       ),
     loop = new Loop(() => scene.update());
 

@@ -1,11 +1,8 @@
 import { mat2d, vec2 } from "gl-matrix";
-import {
-  CtxRendererHandler,
-  toRgba,
-  TransformComponent,
-} from "@aicacia/engine";
-import { FunctionPlotManager } from "../../components/FunctionPlot";
-import { LineType } from "../../components";
+import { toRgba, TransformComponent } from "@aicacia/engine";
+import { CtxRendererHandler } from "@aicacia/engine/lib/web";
+import { FunctionPlotManager } from "../../../components/FunctionPlot";
+import { LineType } from "../../../components";
 import {
   DASHED_SEGMENTS,
   DOTTED_SEGMENTS,

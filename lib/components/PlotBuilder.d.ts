@@ -1,5 +1,5 @@
 import { vec2, vec4 } from "gl-matrix";
-import { Entity, IBuilder } from "@aicacia/engine";
+import { Entity } from "@aicacia/engine";
 export interface IPlotOptions {
     connected?: boolean;
     color?: vec4;
@@ -9,7 +9,7 @@ export interface IPlotPointOptions {
     point: vec2;
     color?: vec4;
 }
-export declare class PlotBuilder implements IBuilder<Entity> {
+export declare class PlotBuilder {
     private entity;
     private points;
     private color;

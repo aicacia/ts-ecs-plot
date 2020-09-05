@@ -1,10 +1,7 @@
 import { mat2d } from "gl-matrix";
-import {
-  CtxRendererHandler,
-  toRgba,
-  TransformComponent,
-} from "@aicacia/engine";
-import { LineManager, LineType } from "../../components/Line";
+import { toRgba, TransformComponent } from "@aicacia/engine";
+import { CtxRendererHandler } from "@aicacia/engine/lib/web";
+import { LineManager, LineType } from "../../../components/Line";
 
 const MAT2D_0 = mat2d.create();
 

@@ -1,5 +1,5 @@
 import { vec2, vec4 } from "gl-matrix";
-import { angleVec2, Entity, IBuilder, Transform2D } from "@aicacia/engine";
+import { angleVec2, Entity, Transform2D } from "@aicacia/engine";
 import { Line } from "./Line";
 import { Point, PointType } from "./Point";
 
@@ -17,7 +17,7 @@ export interface IPlotPointOptions {
   color?: vec4;
 }
 
-export class PlotBuilder implements IBuilder<Entity> {
+export class PlotBuilder {
   private entity: Entity;
   private points: IPlotPointOptions[] = [];
 

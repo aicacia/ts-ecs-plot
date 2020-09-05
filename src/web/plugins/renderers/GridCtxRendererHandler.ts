@@ -1,10 +1,7 @@
 import { mat2d, vec2 } from "gl-matrix";
-import {
-  CtxRendererHandler,
-  toRgba,
-  TransformComponent,
-} from "@aicacia/engine";
-import { GridManager } from "../../components/Grid";
+import { toRgba, TransformComponent } from "@aicacia/engine";
+import { CtxRendererHandler } from "@aicacia/engine/lib/web";
+import { GridManager } from "../../../components/Grid";
 
 const VEC2_0 = vec2.create(),
   MAT2D_0 = mat2d.create();
