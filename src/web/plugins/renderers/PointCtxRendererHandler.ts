@@ -18,7 +18,6 @@ export class PointCtxRendererHandler extends CtxRendererHandler {
           .map((transform) =>
             renderer.render((ctx) => {
               ctx.beginPath();
-              ctx.fillStyle = toRgba(point.getColor());
 
               switch (point.getType()) {
                 case PointType.Square: {
@@ -40,14 +39,17 @@ export class PointCtxRendererHandler extends CtxRendererHandler {
                   ctx.moveTo(size, 0);
                   ctx.lineTo(-size, size);
                   ctx.lineTo(-size, -size);
-                  ctx.closePath();
                   break;
                 }
               }
 
-              if (point.getFill()) {
-                ctx.fill();
-              } else {
+              ctx.closePath();
+
+              ctx.fillStyle = toRgba(point.getColor());
+              ctx.fill();
+
+              if (point.getBorder()) {
+                ctx.strokeStyle = toRgba(point.getBorderColor());
                 ctx.stroke();
               }
             }, transform.getMatrix2d(MAT2D_0))

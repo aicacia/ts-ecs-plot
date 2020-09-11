@@ -1,15 +1,5 @@
-import { DefaultManager } from "@aicacia/engine";
+import { DefaultDescriptorManager } from "@aicacia/engine";
 
-export class GridManager extends DefaultManager<Grid> {
-  onInit() {
-    return this;
-  }
-  onUpdate() {
-    return this;
-  }
-  onAfterUpdate() {
-    return this;
-  }
-}
+export class GridManager extends DefaultDescriptorManager<Grid> {}
 
 import { Grid } from "./Grid";

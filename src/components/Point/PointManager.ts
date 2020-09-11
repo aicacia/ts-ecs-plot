@@ -1,15 +1,5 @@
-import { DefaultManager } from "@aicacia/engine";
+import { DefaultDescriptorManager } from "@aicacia/engine";
 
-export class PointManager extends DefaultManager<Point> {
-  onInit() {
-    return this;
-  }
-  onUpdate() {
-    return this;
-  }
-  onAfterUpdate() {
-    return this;
-  }
-}
+export class PointManager extends DefaultDescriptorManager<Point> {}
 
 import { Point } from "./Point";

@@ -1,8 +1,7 @@
 import { vec2, vec4 } from "gl-matrix";
-import { Component, TransformComponent } from "@aicacia/engine";
+import { Component, Entity, TransformComponent } from "@aicacia/engine";
 import { LineManager } from "./LineManager";
-
-const VEC2_0 = vec2.create();
+import { none, Option } from "@aicacia/core";
 
 export enum LineType {
   Solid = "solid",
@@ -13,17 +12,30 @@ export enum LineType {
 export class Line extends Component {
   static Manager = LineManager;
 
-  private length = 1.0;
+  private start: Option<Entity> = none();
+  private end: Option<Entity> = none();
   private lineWidth = 1.0;
   private type: LineType = LineType.Solid;
   private color: vec4 = vec4.fromValues(0, 0, 0, 1.0);
 
-  setLength(length: number) {
-    this.length = length;
+  setStart(start: Entity) {
+    this.start.replace(start);
     return this;
   }
-  getLength() {
-    return this.length;
+  getStart() {
+    return this.start;
+  }
+
+  setEnd(end: Entity) {
+    this.end.replace(end);
+    return this;
+  }
+  getEnd() {
+    return this.end;
+  }
+
+  set(start: Entity, end: Entity) {
+    return this.setStart(start).setEnd(end);
   }
 
   setLineWidth(lineWidth: number) {
@@ -50,22 +62,16 @@ export class Line extends Component {
     return this.color;
   }
 
-  getStart(out: vec2) {
-    return TransformComponent.getRequiredTransform(
-      this.getRequiredEntity()
-    ).getPosition2(out);
+  getStartPosition(out: vec2) {
+    this.getStart()
+      .flatMap(TransformComponent.getTransform)
+      .ifSome((transform) => transform.getPosition2(out));
+    return out;
   }
-  getEnd(out: vec2) {
-    const transform = TransformComponent.getRequiredTransform(
-        this.getRequiredEntity()
-      ),
-      angle = transform.getRotationZ();
-
-    transform.getPosition2(out);
-    const magnitude = vec2.set(VEC2_0, Math.cos(angle), Math.sin(angle));
-    vec2.scale(magnitude, magnitude, this.length);
-    vec2.add(out, out, magnitude);
-
+  getEndPosition(out: vec2) {
+    this.getEnd()
+      .flatMap(TransformComponent.getTransform)
+      .ifSome((transform) => transform.getPosition2(out));
     return out;
   }
 }

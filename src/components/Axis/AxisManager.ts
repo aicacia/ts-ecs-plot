@@ -1,15 +1,5 @@
-import { DefaultManager } from "@aicacia/engine";
+import { DefaultDescriptorManager } from "@aicacia/engine";
 
-export class AxisManager extends DefaultManager<Axis> {
-  onInit() {
-    return this;
-  }
-  onUpdate() {
-    return this;
-  }
-  onAfterUpdate() {
-    return this;
-  }
-}
+export class AxisManager extends DefaultDescriptorManager<Axis> {}
 
 import { Axis } from "./Axis";

@@ -14,8 +14,9 @@ export class Point extends Component {
 
   private size = 2;
   private type: PointType = PointType.Circle;
-  private fill = true;
   private color: vec4 = vec4.fromValues(0, 0, 0, 1.0);
+  private border = false;
+  private borderColor: vec4 = vec4.fromValues(0, 0, 0, 1.0);
 
   setSize(size: number) {
     this.size = size;
@@ -33,12 +34,20 @@ export class Point extends Component {
     return this.type;
   }
 
-  setFill(fill: boolean) {
-    this.fill = fill;
+  setBorder(border: boolean) {
+    this.border = border;
     return this;
   }
-  getFill() {
-    return this.fill;
+  getBorder() {
+    return this.border;
+  }
+
+  setBorderColor(borderColor: vec4) {
+    vec4.copy(this.borderColor, borderColor);
+    return this;
+  }
+  getBorderColor() {
+    return this.borderColor;
   }
 
   setColor(color: vec4) {

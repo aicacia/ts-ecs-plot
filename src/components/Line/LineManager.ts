@@ -1,15 +1,5 @@
-import { DefaultManager } from "@aicacia/engine";
+import { DefaultDescriptorManager } from "@aicacia/engine";
 
-export class LineManager extends DefaultManager<Line> {
-  onInit() {
-    return this;
-  }
-  onUpdate() {
-    return this;
-  }
-  onAfterUpdate() {
-    return this;
-  }
-}
+export class LineManager extends DefaultDescriptorManager<Line> {}
 
 import { Line } from "./Line";

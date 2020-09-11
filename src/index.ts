@@ -14,5 +14,4 @@ export {
   Line,
   LineType,
   LineManager,
-  PlotBuilder,
 } from "./components";

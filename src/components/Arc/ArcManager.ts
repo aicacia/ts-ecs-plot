@@ -1,15 +1,5 @@
-import { DefaultManager } from "@aicacia/engine";
+import { DefaultDescriptorManager } from "@aicacia/engine";
 
-export class ArcManager extends DefaultManager<Arc> {
-  onInit() {
-    return this;
-  }
-  onUpdate() {
-    return this;
-  }
-  onAfterUpdate() {
-    return this;
-  }
-}
+export class ArcManager extends DefaultDescriptorManager<Arc> {}
 
 import { Arc } from "./Arc";

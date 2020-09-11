@@ -36,6 +36,7 @@ import {
   LineCtxRendererHandler,
   PointCtxRendererHandler,
 } from "../../src/web";
+import { none, Option } from "@aicacia/core";
 
 class Rotator extends Component {
   static requiredPlugins = [Time];
@@ -54,15 +55,19 @@ class Rotator extends Component {
 const ARC_HANDLER_VEC2_0 = vec2.create();
 
 class ArcHandler extends Component {
+  private copy: Option<Entity> = none();
+
+  setCopy(copy) {
+    this.copy.replace(copy);
+    return this;
+  }
+
   onUpdate() {
-    const line = this.getRequiredScene()
-        .find((entity) => entity.hasTag("rotating-line"))
-        .unwrap()
-        .getRequiredComponent(Transform2D),
+    const copy = this.copy.unwrap().getRequiredComponent(Transform2D),
       children = this.getRequiredEntity().getChildren(),
       arc = children[0].getRequiredComponent(Arc),
       point = children[1].getRequiredComponent(Transform2D),
-      rotation = line.getLocalRotation();
+      rotation = copy.getLocalRotation();
 
     const rotationVec = getPointFromAngle(ARC_HANDLER_VEC2_0, rotation);
 
@@ -78,6 +83,40 @@ class ArcHandler extends Component {
 
 function onLoad() {
   const canvas = new WebCanvas().set(512, 512),
+    staticLineEnd = new Entity()
+      .addTag("static-line-end")
+      .addComponent(
+        new Transform2D().setLocalPosition2(vec2.fromValues(9, 0)),
+        new Point().setBorder(true).setColor(vec4.fromValues(0, 0, 0, 0))
+      ),
+    staticLineStart = new Entity()
+      .addTag("static-line-start")
+      .addComponent(new Transform2D().setLocalRotation(Math.PI * 0.25))
+      .addChild(staticLineEnd),
+    staticLine = new Entity()
+      .addTag("static-line")
+      .addChild(staticLineStart)
+      .addComponent(
+        new Transform2D(),
+        new Line().setType(LineType.Dashed).set(staticLineStart, staticLineEnd)
+      ),
+    lineEnd = new Entity()
+      .addTag("line-end")
+      .addComponent(
+        new Transform2D().setLocalPosition2(vec2.fromValues(9, 0)),
+        new Point().setType(PointType.Triangle)
+      ),
+    lineStart = new Entity()
+      .addTag("line-start")
+      .addComponent(new Transform2D(), new Point(), new Rotator())
+      .addChild(lineEnd),
+    line = new Entity()
+      .addTag("line")
+      .addChild(lineStart)
+      .addComponent(
+        new Transform2D().setLocalRotation(Math.PI * 0.25),
+        new Line().set(lineStart, lineEnd)
+      ),
     scene = new Scene()
       .addEntity(
         // axis and grid
@@ -96,48 +135,29 @@ function onLoad() {
             (n) => HALF_PI + Math.PI * n
           )
         ),
+        staticLine,
+        line,
         new Entity()
-          .addTag("static-line")
+          .addTag("arc-parent")
           .addComponent(
-            new Transform2D().setLocalRotation(Math.PI / 4),
-            new Line().setType(LineType.Dashed).setLength(9),
-            new Point()
+            new Transform2D().setLocalRotation(Math.PI * 0.25),
+            new ArcHandler().setCopy(lineStart)
           )
           .addChild(
-            new Entity().addComponent(
-              new Transform2D().setLocalPosition(vec2.fromValues(9, 0)),
-              new Point().setType(PointType.Triangle)
-            ),
-            new Entity()
-              .addTag("rotating-line")
-              .addComponent(
-                new Transform2D(),
-                new Line().setLength(9),
-                new Point(),
-                new Rotator()
-              )
-              .addChild(
-                // Lines arrow
-                new Entity().addComponent(
-                  new Transform2D().setLocalPosition(vec2.fromValues(9, 0)),
-                  new Point().setType(PointType.Triangle)
-                )
-              ),
             new Entity()
               .addTag("arc")
-              .addComponent(new ArcHandler())
-              .addChild(
-                new Entity().addComponent(
-                  new Transform2D(),
-                  new Arc()
-                    .setDirection(Direction.CCW)
-                    .setRadius(5)
-                    .setColor(vec4.fromValues(0, 0, 1.0, 1))
-                ),
-                new Entity().addComponent(
-                  new Transform2D(),
-                  new Point().setType(PointType.Triangle)
-                )
+              .addComponent(
+                new Transform2D(),
+                new Arc()
+                  .setDirection(Direction.CCW)
+                  .setRadius(5)
+                  .setColor(vec4.fromValues(0, 0, 1.0, 1))
+              ),
+            new Entity()
+              .addTag("arc-point")
+              .addComponent(
+                new Transform2D(),
+                new Point().setType(PointType.Triangle)
               )
           )
       )

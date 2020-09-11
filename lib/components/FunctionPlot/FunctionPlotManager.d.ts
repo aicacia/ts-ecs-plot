@@ -1,7 +1,4 @@
-import { DefaultManager } from "@aicacia/engine";
-export declare class FunctionPlotManager extends DefaultManager<FunctionPlot> {
-    onInit(): this;
-    onUpdate(): this;
-    onAfterUpdate(): this;
+import { DefaultDescriptorManager } from "@aicacia/engine";
+export declare class FunctionPlotManager extends DefaultDescriptorManager<FunctionPlot> {
 }
 import { FunctionPlot } from "./FunctionPlot";
