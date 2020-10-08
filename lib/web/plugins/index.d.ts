@@ -1,1 +1,1 @@
-export { ArcCtxRendererHandler, AxisCtxRendererHandler, GridCtxRendererHandler, FunctionPlotCtxRendererHandler, LineCtxRendererHandler, PointCtxRendererHandler, } from "./renderers";
+export { ArcCtxRendererHandler, AxisCtxRendererHandler, GridCtxRendererHandler, PlotCtxRendererHandler, LineCtxRendererHandler, PointCtxRendererHandler, } from "./renderers";

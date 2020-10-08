@@ -1,1 +1,1 @@
-export { ArcCtxRendererHandler, AxisCtxRendererHandler, GridCtxRendererHandler, FunctionPlotCtxRendererHandler, LineCtxRendererHandler, PointCtxRendererHandler, } from "./plugins";
+export { ArcCtxRendererHandler, AxisCtxRendererHandler, GridCtxRendererHandler, PlotCtxRendererHandler, LineCtxRendererHandler, PointCtxRendererHandler, } from "./plugins";
