@@ -9,6 +9,23 @@ export const DASHED_SEGMENTS = [0.5, 0.2],
   DOTTED_SEGMENTS = [0.1, 0.1],
   SOLID_SEGMENTS = [];
 
+export function setLineType(ctx: CanvasRenderingContext2D, lineType: LineType) {
+  switch (lineType) {
+    case LineType.Solid: {
+      ctx.setLineDash(SOLID_SEGMENTS);
+      break;
+    }
+    case LineType.Dashed: {
+      ctx.setLineDash(DASHED_SEGMENTS);
+      break;
+    }
+    case LineType.Dotted: {
+      ctx.setLineDash(DOTTED_SEGMENTS);
+      break;
+    }
+  }
+}
+
 export class LineCtxRendererHandler extends CtxRendererHandler {
   onRender() {
     const renderer = this.getRequiredRenderer();
@@ -19,20 +36,7 @@ export class LineCtxRendererHandler extends CtxRendererHandler {
           ctx.fillStyle = toRgba(line.getColor());
           ctx.beginPath();
 
-          switch (line.getType()) {
-            case LineType.Solid: {
-              ctx.setLineDash(SOLID_SEGMENTS);
-              break;
-            }
-            case LineType.Dashed: {
-              ctx.setLineDash(DASHED_SEGMENTS);
-              break;
-            }
-            case LineType.Dotted: {
-              ctx.setLineDash(DOTTED_SEGMENTS);
-              break;
-            }
-          }
+          setLineType(ctx, line.getType());
 
           const start = line.getStartPosition(VEC2_0);
           ctx.moveTo(start[0], start[1]);

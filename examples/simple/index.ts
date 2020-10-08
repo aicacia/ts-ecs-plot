@@ -1,4 +1,4 @@
-import { vec2, vec3, vec4 } from "gl-matrix";
+import { vec2, vec4 } from "gl-matrix";
 import {
   Camera2D,
   Camera2DControl,
@@ -22,17 +22,19 @@ import {
   Axis,
   Direction,
   Grid,
-  FunctionPlot,
+  FunctionPlotSection,
+  Plot,
   Line,
   LineType,
   Point,
   PointType,
+  PointsPlotSection,
 } from "../../src";
 import {
   ArcCtxRendererHandler,
   AxisCtxRendererHandler,
   GridCtxRendererHandler,
-  FunctionPlotCtxRendererHandler,
+  PlotCtxRendererHandler,
   LineCtxRendererHandler,
   PointCtxRendererHandler,
 } from "../../src/web";
@@ -127,12 +129,15 @@ function onLoad() {
           .addComponent(
             new Transform2D().setLocalScale(vec2.fromValues(9, 9)),
             new Camera2DControl(),
-            new Camera2D().setBackground(vec3.fromValues(0.98, 0.98, 0.98))
+            new Camera2D().setBackground(vec4.fromValues(0.98, 0.98, 0.98, 1.0))
           ),
         new Entity().addTag("function").addComponent(
           new Transform2D(),
-          new FunctionPlot((x) => Math.tan(x)).setFAsymptote(
-            (n) => HALF_PI + Math.PI * n
+          new Plot().add(
+            new FunctionPlotSection((x) => Math.tan(x)).setFAsymptote(
+              (n) => HALF_PI + Math.PI * n
+            ),
+            new PointsPlotSection(vec2.fromValues(2, 2), vec2.fromValues(2, 10))
           )
         ),
         staticLine,
@@ -166,11 +171,11 @@ function onLoad() {
         new CtxRenderer(
           canvas,
           canvas.getElement().getContext("2d")
-        ).addRendererHandlers(
+        ).addRendererHandler(
           new ArcCtxRendererHandler(),
           new AxisCtxRendererHandler(),
           new GridCtxRendererHandler(),
-          new FunctionPlotCtxRendererHandler(),
+          new PlotCtxRendererHandler(),
           new LineCtxRendererHandler(),
           new PointCtxRendererHandler()
         ),

@@ -2,7 +2,7 @@ export {
   ArcCtxRendererHandler,
   AxisCtxRendererHandler,
   GridCtxRendererHandler,
-  FunctionPlotCtxRendererHandler,
+  PlotCtxRendererHandler,
   LineCtxRendererHandler,
   PointCtxRendererHandler,
 } from "./plugins";

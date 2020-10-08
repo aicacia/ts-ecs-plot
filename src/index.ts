@@ -14,4 +14,10 @@ export {
   Line,
   LineType,
   LineManager,
+  Plot,
+  PlotManager,
+  PlotSection,
+  PointsPlotSection,
+  F,
+  FunctionPlotSection,
 } from "./components";

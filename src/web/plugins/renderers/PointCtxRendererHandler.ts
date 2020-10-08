@@ -1,9 +1,51 @@
-import { mat2d } from "gl-matrix";
+import { mat2d, vec2, vec4 } from "gl-matrix";
 import { toRgba, TransformComponent } from "@aicacia/engine";
 import { CtxRendererHandler } from "@aicacia/engine/lib/web";
 import { PointManager, PointType } from "../../../components/Point";
 
-const MAT2D_0 = mat2d.create();
+const VEC2_ZERO = vec2.create(),
+  MAT2D_0 = mat2d.create();
+
+export function drawPoint(
+  ctx: CanvasRenderingContext2D,
+  pointPosition: vec2,
+  pointType: PointType,
+  pointSize: number,
+  pointColor: vec4,
+  scale: number
+) {
+  ctx.translate(pointPosition[0], pointPosition[1]);
+  ctx.beginPath();
+
+  switch (pointType) {
+    case PointType.Square: {
+      const size = pointSize * 2 * scale;
+
+      ctx.moveTo(size, size);
+      ctx.lineTo(-size, size);
+      ctx.lineTo(-size, -size);
+      ctx.lineTo(size, -size);
+      break;
+    }
+    case PointType.Circle: {
+      ctx.arc(0, 0, pointSize * 1.5 * scale, 0, 2 * Math.PI);
+      break;
+    }
+    case PointType.Triangle: {
+      const size = pointSize * 2 * scale;
+
+      ctx.moveTo(size, 0);
+      ctx.lineTo(-size, size);
+      ctx.lineTo(-size, -size);
+      break;
+    }
+  }
+
+  ctx.closePath();
+  ctx.fillStyle = toRgba(pointColor);
+  ctx.fill();
+  ctx.translate(-pointPosition[0], -pointPosition[1]);
+}
 
 export class PointCtxRendererHandler extends CtxRendererHandler {
   onRender() {
@@ -17,36 +59,14 @@ export class PointCtxRendererHandler extends CtxRendererHandler {
           .flatMap(TransformComponent.getTransform)
           .map((transform) =>
             renderer.render((ctx) => {
-              ctx.beginPath();
-
-              switch (point.getType()) {
-                case PointType.Square: {
-                  const size = point.getSize() * 2 * scale;
-
-                  ctx.moveTo(size, size);
-                  ctx.lineTo(-size, size);
-                  ctx.lineTo(-size, -size);
-                  ctx.lineTo(size, -size);
-                  break;
-                }
-                case PointType.Circle: {
-                  ctx.arc(0, 0, point.getSize() * 1.5 * scale, 0, 2 * Math.PI);
-                  break;
-                }
-                case PointType.Triangle: {
-                  const size = point.getSize() * 2 * scale;
-
-                  ctx.moveTo(size, 0);
-                  ctx.lineTo(-size, size);
-                  ctx.lineTo(-size, -size);
-                  break;
-                }
-              }
-
-              ctx.closePath();
-
-              ctx.fillStyle = toRgba(point.getColor());
-              ctx.fill();
+              drawPoint(
+                ctx,
+                VEC2_ZERO,
+                point.getType(),
+                point.getSize(),
+                point.getColor(),
+                scale
+              );
 
               if (point.getBorder()) {
                 ctx.strokeStyle = toRgba(point.getBorderColor());
