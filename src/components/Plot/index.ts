@@ -1,8 +1,5 @@
-export {
-  Plot,
-  PlotSection,
-  PointsPlotSection,
-  FunctionPlotSection,
-  F,
-} from "./Plot";
+export { Plot } from "./Plot";
+export { PointsPlot } from "./PointsPlot";
+export { PlotSection } from "./PlotSection";
+export { FunctionPlot, F } from "./FunctionPlot";
 export { PlotManager } from "./PlotManager";

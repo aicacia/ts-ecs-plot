@@ -6,3 +6,4 @@ export {
   LineCtxRendererHandler,
   PointCtxRendererHandler,
 } from "./plugins";
+export { WebPlotSceneBuilder } from "./WebPlotSceneBuilder";

@@ -1,18 +1,14 @@
-import { Option, some, none } from "@aicacia/core";
-import { Component, EPSILON } from "@aicacia/engine";
-import { FunctionPlotManager } from "./FunctionPlotManager";
-import { vec2, vec4 } from "gl-matrix";
-import { LineType } from "../Line";
+import { EPSILON } from "@aicacia/engine";
+import { vec2 } from "gl-matrix";
+import { none, Option, some } from "@aicacia/core";
+import { PlotSection } from "./PlotSection";
 
 export type F = (x: number) => number;
 
-export class FunctionPlot extends Component {
-  static Manager = FunctionPlotManager;
-
-  private lineWidth = 1.0;
-  private type: LineType = LineType.Solid;
-  private color: vec4 = vec4.fromValues(0, 0, 0, 1.0);
+export class FunctionPlot extends PlotSection {
   private f: F;
+  private min: vec2 = vec2.fromValues(-Infinity, -Infinity);
+  private max: vec2 = vec2.fromValues(Infinity, Infinity);
   private fAsymptote: Option<F> = none();
 
   constructor(f: F) {
@@ -21,35 +17,27 @@ export class FunctionPlot extends Component {
     this.f = f;
   }
 
-  setLineWidth(lineWidth: number) {
-    this.lineWidth = lineWidth;
-    return this;
-  }
-  getLineWidth() {
-    return this.lineWidth;
-  }
-
-  setType(type: LineType) {
-    this.type = type;
-    return this;
-  }
-  getType() {
-    return this.type;
-  }
-
-  setColor(color: vec4) {
-    vec4.copy(this.color, color);
-    return this;
-  }
-  getColor() {
-    return this.color;
-  }
-
   getF() {
     return this.f;
   }
   setF(f: F) {
     this.f = f;
+    return this;
+  }
+
+  getMin() {
+    return this.min;
+  }
+  setMin(min: vec2) {
+    vec2.copy(this.min, min);
+    return this;
+  }
+
+  getMax() {
+    return this.max;
+  }
+  setMax(max: vec2) {
+    vec2.copy(this.max, max);
     return this;
   }
 
@@ -61,7 +49,7 @@ export class FunctionPlot extends Component {
     return this;
   }
 
-  getAsymptoteParts(points: vec2[]): vec2[][] {
+  private getAsymptoteParts(points: vec2[]): vec2[][] {
     return this.fAsymptote
       .map((fAsymptote) => {
         const out: vec2[][] = [[]];
@@ -101,13 +89,16 @@ export class FunctionPlot extends Component {
       .unwrapOrElse(() => [points]);
   }
 
-  getPoints(minX: number, maxX: number, step = 1): vec2[] {
+  getPoints(minX: number, maxX: number, step = 1) {
     const out = [];
+
+    minX = Math.max(this.min[0], minX);
+    maxX = Math.min(this.max[0], maxX);
 
     for (let x = minX; x < maxX; x += step) {
       out.push(vec2.fromValues(x, this.f(x)));
     }
 
-    return out;
+    return this.getAsymptoteParts(out);
   }
 }

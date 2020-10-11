@@ -1,12 +1,11 @@
 export {
   Axis,
   AxisManager,
-  FunctionPlot,
-  FunctionPlotManager,
   Point,
   Grid,
   GridManager,
   PointType,
+  PointData,
   PointManager,
   Arc,
   Direction,
@@ -17,7 +16,8 @@ export {
   Plot,
   PlotManager,
   PlotSection,
-  PointsPlotSection,
+  PointsPlot,
   F,
-  FunctionPlotSection,
+  FunctionPlot,
 } from "./components";
+export { PlotSceneBuilder } from "./PlotSceneBuilder";

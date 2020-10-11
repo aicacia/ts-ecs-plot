@@ -9,9 +9,7 @@ export enum PointType {
   Triangle = "Triangle",
 }
 
-export class Point extends Component {
-  static Manager = PointManager;
-
+export class PointData {
   private size = 2;
   private type: PointType = PointType.Circle;
   private color: vec4 = vec4.fromValues(0, 0, 0, 1.0);
@@ -38,6 +36,12 @@ export class Point extends Component {
     this.border = border;
     return this;
   }
+  enableBorder() {
+    return this.setBorder(true);
+  }
+  disbleBorder() {
+    return this.setBorder(false);
+  }
   getBorder() {
     return this.border;
   }
@@ -56,5 +60,23 @@ export class Point extends Component {
   }
   getColor() {
     return this.color;
+  }
+}
+
+export class Point extends Component {
+  static Manager = PointManager;
+
+  private data: PointData = new PointData();
+
+  set(data: PointData) {
+    this.data = data;
+    return this;
+  }
+  update(updater: (data: PointData) => PointData) {
+    this.data = updater(this.data);
+    return this;
+  }
+  get() {
+    return this.data;
   }
 }

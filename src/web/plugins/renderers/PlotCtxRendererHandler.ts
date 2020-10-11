@@ -3,10 +3,10 @@ import { toRgba, TransformComponent } from "@aicacia/engine";
 import { CtxRendererHandler } from "@aicacia/engine/lib/web";
 import {
   PlotManager,
-  PointsPlotSection,
-  FunctionPlotSection,
+  PointsPlot,
+  FunctionPlot,
 } from "../../../components/Plot";
-import { PointType } from "../../../components";
+import { PointData, PointType } from "../../../components";
 import { setLineType } from "./LineCtxRendererHandler";
 import { drawPoint } from "./PointCtxRendererHandler";
 
@@ -25,14 +25,12 @@ function drawPointLines(ctx: CanvasRenderingContext2D, points: vec2[]) {
 
 function drawPointIfExists(
   ctx: CanvasRenderingContext2D,
-  pointType: PointType,
-  pointSize: number,
-  pointColor: vec4,
+  pointData: PointData,
   scale: number,
-  point?: vec2
+  pointPosition?: vec2
 ) {
-  if (point) {
-    drawPoint(ctx, point, pointType, pointSize, pointColor, scale);
+  if (pointPosition) {
+    drawPoint(ctx, pointPosition, pointData, scale);
   }
 }
 
@@ -59,7 +57,7 @@ export class PlotCtxRendererHandler extends CtxRendererHandler {
             renderer.render(
               (ctx) =>
                 plot.get().forEach((section) => {
-                  if (section instanceof PointsPlotSection) {
+                  if (section instanceof PointsPlot) {
                     const points = section.getPoints();
 
                     ctx.lineWidth = scale * section.getLineWidth();
@@ -68,8 +66,6 @@ export class PlotCtxRendererHandler extends CtxRendererHandler {
                     drawPointIfExists(
                       ctx,
                       section.getStartPoint(),
-                      1.0,
-                      section.getStartColor(),
                       scale,
                       points[0]
                     );
@@ -82,12 +78,10 @@ export class PlotCtxRendererHandler extends CtxRendererHandler {
                     drawPointIfExists(
                       ctx,
                       section.getEndPoint(),
-                      1.0,
-                      section.getEndColor(),
                       scale,
                       points[points.length - 1]
                     );
-                  } else if (section instanceof FunctionPlotSection) {
+                  } else if (section instanceof FunctionPlot) {
                     const parts = section.getPoints(
                       position[0] - halfWidth,
                       position[0] + halfWidth,
@@ -101,8 +95,6 @@ export class PlotCtxRendererHandler extends CtxRendererHandler {
                       drawPointIfExists(
                         ctx,
                         section.getStartPoint(),
-                        1.0,
-                        section.getStartColor(),
                         scale,
                         points[0]
                       );
@@ -115,8 +107,6 @@ export class PlotCtxRendererHandler extends CtxRendererHandler {
                       drawPointIfExists(
                         ctx,
                         section.getEndPoint(),
-                        1.0,
-                        section.getEndColor(),
                         scale,
                         points[points.length - 1]
                       );

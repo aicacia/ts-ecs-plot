@@ -1,25 +1,23 @@
 import { mat2d, vec2, vec4 } from "gl-matrix";
 import { toRgba, TransformComponent } from "@aicacia/engine";
 import { CtxRendererHandler } from "@aicacia/engine/lib/web";
-import { PointManager, PointType } from "../../../components/Point";
+import { PointManager, PointData, PointType } from "../../../components/Point";
 
 const VEC2_ZERO = vec2.create(),
   MAT2D_0 = mat2d.create();
 
 export function drawPoint(
   ctx: CanvasRenderingContext2D,
-  pointPosition: vec2,
-  pointType: PointType,
-  pointSize: number,
-  pointColor: vec4,
+  position: vec2,
+  pointData: PointData,
   scale: number
 ) {
-  ctx.translate(pointPosition[0], pointPosition[1]);
+  ctx.translate(position[0], position[1]);
   ctx.beginPath();
 
-  switch (pointType) {
+  switch (pointData.getType()) {
     case PointType.Square: {
-      const size = pointSize * 2 * scale;
+      const size = pointData.getSize() * 2 * scale;
 
       ctx.moveTo(size, size);
       ctx.lineTo(-size, size);
@@ -28,11 +26,11 @@ export function drawPoint(
       break;
     }
     case PointType.Circle: {
-      ctx.arc(0, 0, pointSize * 1.5 * scale, 0, 2 * Math.PI);
+      ctx.arc(0, 0, pointData.getSize() * 1.5 * scale, 0, 2 * Math.PI);
       break;
     }
     case PointType.Triangle: {
-      const size = pointSize * 2 * scale;
+      const size = pointData.getSize() * 2 * scale;
 
       ctx.moveTo(size, 0);
       ctx.lineTo(-size, size);
@@ -42,9 +40,15 @@ export function drawPoint(
   }
 
   ctx.closePath();
-  ctx.fillStyle = toRgba(pointColor);
+  ctx.fillStyle = toRgba(pointData.getColor());
   ctx.fill();
-  ctx.translate(-pointPosition[0], -pointPosition[1]);
+
+  if (pointData.getBorder()) {
+    ctx.strokeStyle = toRgba(pointData.getBorderColor());
+    ctx.stroke();
+  }
+
+  ctx.translate(-position[0], -position[1]);
 }
 
 export class PointCtxRendererHandler extends CtxRendererHandler {
@@ -59,19 +63,7 @@ export class PointCtxRendererHandler extends CtxRendererHandler {
           .flatMap(TransformComponent.getTransform)
           .map((transform) =>
             renderer.render((ctx) => {
-              drawPoint(
-                ctx,
-                VEC2_ZERO,
-                point.getType(),
-                point.getSize(),
-                point.getColor(),
-                scale
-              );
-
-              if (point.getBorder()) {
-                ctx.strokeStyle = toRgba(point.getBorderColor());
-                ctx.stroke();
-              }
+              drawPoint(ctx, VEC2_ZERO, point.get(), scale);
             }, transform.getMatrix2d(MAT2D_0))
           )
       )

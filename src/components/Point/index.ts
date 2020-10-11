@@ -1,2 +1,2 @@
-export { Point, PointType } from "./Point";
+export { Point, PointData, PointType } from "./Point";
 export { PointManager } from "./PointManager";

@@ -1,43 +1,26 @@
 import { vec2, vec4 } from "gl-matrix";
 import {
-  Camera2D,
-  Camera2DControl,
   Component,
   Entity,
   getPointFromAngle,
-  Input,
   Loop,
-  Scene,
   Time,
   Transform2D,
   HALF_PI,
 } from "@aicacia/engine";
-import {
-  WebCanvas,
-  CtxRenderer,
-  WebEventListener,
-} from "@aicacia/engine/lib/web";
+import { WebCanvas } from "@aicacia/engine/lib/web";
 import {
   Arc,
-  Axis,
   Direction,
-  Grid,
-  FunctionPlotSection,
+  FunctionPlot,
   Plot,
   Line,
   LineType,
   Point,
   PointType,
-  PointsPlotSection,
+  PointsPlot,
 } from "../../src";
-import {
-  ArcCtxRendererHandler,
-  AxisCtxRendererHandler,
-  GridCtxRendererHandler,
-  PlotCtxRendererHandler,
-  LineCtxRendererHandler,
-  PointCtxRendererHandler,
-} from "../../src/web";
+import { WebPlotSceneBuilder } from "../../src/web";
 import { none, Option } from "@aicacia/core";
 
 class Rotator extends Component {
@@ -85,108 +68,87 @@ class ArcHandler extends Component {
 
 function onLoad() {
   const canvas = new WebCanvas().set(512, 512),
-    staticLineEnd = new Entity()
-      .addTag("static-line-end")
-      .addComponent(
-        new Transform2D().setLocalPosition2(vec2.fromValues(9, 0)),
-        new Point().setBorder(true).setColor(vec4.fromValues(0, 0, 0, 0))
-      ),
-    staticLineStart = new Entity()
-      .addTag("static-line-start")
-      .addComponent(new Transform2D().setLocalRotation(Math.PI * 0.25))
-      .addChild(staticLineEnd),
-    staticLine = new Entity()
-      .addTag("static-line")
-      .addChild(staticLineStart)
-      .addComponent(
-        new Transform2D(),
-        new Line().setType(LineType.Dashed).set(staticLineStart, staticLineEnd)
-      ),
-    lineEnd = new Entity()
-      .addTag("line-end")
-      .addComponent(
-        new Transform2D().setLocalPosition2(vec2.fromValues(9, 0)),
-        new Point().setType(PointType.Triangle)
-      ),
-    lineStart = new Entity()
-      .addTag("line-start")
-      .addComponent(new Transform2D(), new Point(), new Rotator())
-      .addChild(lineEnd),
-    line = new Entity()
-      .addTag("line")
-      .addChild(lineStart)
-      .addComponent(
-        new Transform2D().setLocalRotation(Math.PI * 0.25),
-        new Line().set(lineStart, lineEnd)
-      ),
-    scene = new Scene()
-      .addEntity(
-        // axis and grid
-        new Entity().addComponent(new Axis().setNumbersEvery(5), new Grid()),
-        // Camera setup
-        new Entity()
-          .addTag("camera")
-          .addComponent(
-            new Transform2D().setLocalScale(vec2.fromValues(9, 9)),
-            new Camera2DControl(),
-            new Camera2D().setBackground(vec4.fromValues(0.98, 0.98, 0.98, 1.0))
-          ),
-        new Entity().addTag("function").addComponent(
-          new Transform2D(),
-          new Plot().add(
-            new FunctionPlotSection((x) => Math.tan(x)).setFAsymptote(
-              (n) => HALF_PI + Math.PI * n
-            ),
-            new PointsPlotSection(vec2.fromValues(2, 2), vec2.fromValues(2, 10))
-          )
-        ),
-        staticLine,
-        line,
-        new Entity()
-          .addTag("arc-parent")
-          .addComponent(
-            new Transform2D().setLocalRotation(Math.PI * 0.25),
-            new ArcHandler().setCopy(lineStart)
-          )
-          .addChild(
-            new Entity()
-              .addTag("arc")
-              .addComponent(
-                new Transform2D(),
-                new Arc()
-                  .setDirection(Direction.CCW)
-                  .setRadius(5)
-                  .setColor(vec4.fromValues(0, 0, 1.0, 1))
-              ),
-            new Entity()
-              .addTag("arc-point")
-              .addComponent(
-                new Transform2D(),
-                new Point().setType(PointType.Triangle)
+    scene = new WebPlotSceneBuilder(canvas)
+      .updateScene((scene) => {
+        const staticLineEnd = new Entity()
+            .addTag("static-line-end")
+            .addComponent(
+              new Transform2D().setLocalPosition2(vec2.fromValues(9, 0)),
+              new Point().update((data) =>
+                data.setBorder(true).setColor(vec4.fromValues(0, 0, 0, 0))
               )
-          )
-      )
-      .addPlugin(
-        // Handles all rendering
-        new CtxRenderer(
-          canvas,
-          canvas.getElement().getContext("2d")
-        ).addRendererHandler(
-          new ArcCtxRendererHandler(),
-          new AxisCtxRendererHandler(),
-          new GridCtxRendererHandler(),
-          new PlotCtxRendererHandler(),
-          new LineCtxRendererHandler(),
-          new PointCtxRendererHandler()
-        ),
-        // Required by many Components and plugins
-        new Time(),
-        // Handles all input
-        new Input().addEventListener(new WebEventListener(canvas.getElement()))
-      ),
-    loop = new Loop(() => scene.update());
+            ),
+          staticLineStart = new Entity()
+            .addTag("static-line-start")
+            .addComponent(new Transform2D().setLocalRotation(Math.PI * 0.25))
+            .addChild(staticLineEnd),
+          staticLine = new Entity()
+            .addTag("static-line")
+            .addChild(staticLineStart)
+            .addComponent(
+              new Transform2D(),
+              new Line()
+                .setType(LineType.Dashed)
+                .set(staticLineStart, staticLineEnd)
+            ),
+          lineEnd = new Entity().addTag("line-end").addComponent(
+            new Transform2D().setLocalPosition2(vec2.fromValues(9, 0)),
+            new Point().update((data) => data.setType(PointType.Triangle))
+          ),
+          lineStart = new Entity()
+            .addTag("line-start")
+            .addComponent(new Transform2D(), new Point(), new Rotator())
+            .addChild(lineEnd),
+          line = new Entity()
+            .addTag("line")
+            .addChild(lineStart)
+            .addComponent(
+              new Transform2D().setLocalRotation(Math.PI * 0.25),
+              new Line().set(lineStart, lineEnd)
+            );
 
-  scene.maintain();
+        return scene.addEntity(
+          new Entity().addTag("function").addComponent(
+            new Transform2D(),
+            new Plot().add(
+              new FunctionPlot((x) => Math.tan(x)).setFAsymptote(
+                (n) => HALF_PI + Math.PI * n
+              ),
+              new PointsPlot(
+                vec2.fromValues(2, 2),
+                vec2.fromValues(2, 5)
+              ).updateEndPoint((endPoint) =>
+                endPoint.setColor(vec4.fromValues(0, 0, 0, 0)).setBorder(true)
+              )
+            )
+          ),
+          staticLine,
+          line,
+          new Entity()
+            .addTag("arc-parent")
+            .addComponent(
+              new Transform2D().setLocalRotation(Math.PI * 0.25),
+              new ArcHandler().setCopy(lineStart)
+            )
+            .addChild(
+              new Entity()
+                .addTag("arc")
+                .addComponent(
+                  new Transform2D(),
+                  new Arc()
+                    .setDirection(Direction.CCW)
+                    .setRadius(5)
+                    .setColor(vec4.fromValues(0, 0, 1.0, 1))
+                ),
+              new Entity().addTag("arc-point").addComponent(
+                new Transform2D(),
+                new Point().update((data) => data.setType(PointType.Triangle))
+              )
+            )
+        );
+      })
+      .build(),
+    loop = new Loop(() => scene.update());
 
   const app = document.getElementById("app"),
     download = document.getElementById("download");
