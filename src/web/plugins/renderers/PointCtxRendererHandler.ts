@@ -1,4 +1,4 @@
-import { mat2d, vec2, vec4 } from "gl-matrix";
+import { mat2d, vec2 } from "gl-matrix";
 import { toRgba, TransformComponent } from "@aicacia/engine";
 import { CtxRendererHandler } from "@aicacia/engine/lib/web";
 import { PointManager, PointData, PointType } from "../../../components/Point";

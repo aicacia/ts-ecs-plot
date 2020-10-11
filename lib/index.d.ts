@@ -1,1 +1,2 @@
-export { Axis, AxisManager, FunctionPlot, FunctionPlotManager, Point, Grid, GridManager, PointType, PointManager, Arc, Direction, ArcManager, Line, LineType, LineManager, Plot, PlotManager, PlotSection, PointsPlotSection, F, FunctionPlotSection, } from "./components";
+export { Axis, AxisManager, Point, Grid, GridManager, PointType, PointData, PointManager, Arc, Direction, ArcManager, Line, LineType, LineManager, Plot, PlotManager, PlotSection, PointsPlot, F, FunctionPlot, } from "./components";
+export { PlotSceneBuilder } from "./PlotSceneBuilder";

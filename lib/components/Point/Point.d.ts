@@ -7,8 +7,7 @@ export declare enum PointType {
     Square = "Square",
     Triangle = "Triangle"
 }
-export declare class Point extends Component {
-    static Manager: typeof PointManager;
+export declare class PointData {
     private size;
     private type;
     private color;
@@ -19,9 +18,18 @@ export declare class Point extends Component {
     setType(type: PointType): this;
     getType(): PointType;
     setBorder(border: boolean): this;
+    enableBorder(): this;
+    disbleBorder(): this;
     getBorder(): boolean;
     setBorderColor(borderColor: vec4): this;
     getBorderColor(): import("gl-matrix").mat2;
     setColor(color: vec4): this;
     getColor(): import("gl-matrix").mat2;
+}
+export declare class Point extends Component {
+    static Manager: typeof PointManager;
+    private data;
+    set(data: PointData): this;
+    update(updater: (data: PointData) => PointData): this;
+    get(): PointData;
 }

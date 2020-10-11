@@ -1,4 +1,4 @@
-import { mat2d, vec2, vec4 } from "gl-matrix";
+import { mat2d, vec2 } from "gl-matrix";
 import { toRgba, TransformComponent } from "@aicacia/engine";
 import { CtxRendererHandler } from "@aicacia/engine/lib/web";
 import {
@@ -6,7 +6,7 @@ import {
   PointsPlot,
   FunctionPlot,
 } from "../../../components/Plot";
-import { PointData, PointType } from "../../../components";
+import { PointData } from "../../../components";
 import { setLineType } from "./LineCtxRendererHandler";
 import { drawPoint } from "./PointCtxRendererHandler";
 
