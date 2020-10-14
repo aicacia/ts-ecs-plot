@@ -22,7 +22,8 @@ export class PlotSceneBuilder {
           new Camera2D().setBackground(vec4.fromValues(0.98, 0.98, 0.98, 1.0))
         )
     )
-    .addPlugin(new Time(), new Input());
+    .addPlugin(new Time(), new Input())
+    .maintain();
 
   disableCameraControl() {
     return this.updateCamera((entity) => {

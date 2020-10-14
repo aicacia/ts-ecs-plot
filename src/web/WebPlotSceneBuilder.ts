@@ -21,6 +21,7 @@ export class WebPlotSceneBuilder extends PlotSceneBuilder {
     this.scene
       .getRequiredPlugin(Input)
       .addEventListener(new WebEventListener(canvas.getElement()));
+
     this.scene.addPlugin(
       new CtxRenderer(
         canvas,

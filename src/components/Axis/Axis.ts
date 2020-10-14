@@ -7,6 +7,8 @@ export class Axis extends Component {
 
   private xColor: vec4 = vec4.fromValues(0, 0, 0, 1.0);
   private yColor: vec4 = vec4.fromValues(0, 0, 0, 1.0);
+  private xShow = true;
+  private yShow = true;
   private size = 1;
   private lineWidth = 1.0;
   private showTicks = true;
@@ -36,6 +38,22 @@ export class Axis extends Component {
   }
   setYColor(yColor: vec4) {
     vec4.copy(this.yColor, yColor);
+    return this;
+  }
+
+  getXShow() {
+    return this.xShow;
+  }
+  setXShow(xShow: boolean) {
+    this.xShow = xShow;
+    return this;
+  }
+
+  getYShow() {
+    return this.yShow;
+  }
+  setYShow(yShow: boolean) {
+    this.yShow = yShow;
     return this;
   }
 

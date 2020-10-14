@@ -41,10 +41,11 @@ export class AxisCtxRendererHandler extends CtxRendererHandler {
           ctx.lineWidth = scale * axis.getLineWidth();
           ctx.font = `${scale * axis.getNumberSize()}em Arial`;
 
-          ctx.translate(positionX, 0);
-          ctx.strokeStyle = toRgba(axis.getXColor());
-          ctx.beginPath();
-          if (showTicks || showNumbers) {
+          if (axis.getXShow() && (showTicks || showNumbers)) {
+            ctx.translate(positionX, 0);
+            ctx.strokeStyle = toRgba(axis.getXColor());
+            ctx.beginPath();
+
             for (
               let x = Math.floor(startX) - gridOffsetX, xl = Math.ceil(endX);
               x < xl;
@@ -65,15 +66,17 @@ export class AxisCtxRendererHandler extends CtxRendererHandler {
                 ctx.scale(1, -1);
               }
             }
-          }
-          ctx.moveTo(startX, 0);
-          ctx.lineTo(endX, 0);
-          ctx.stroke();
 
-          ctx.translate(-positionX, positionY);
-          ctx.strokeStyle = toRgba(axis.getYColor());
-          ctx.beginPath();
-          if (showTicks || showNumbers) {
+            ctx.moveTo(startX, 0);
+            ctx.lineTo(endX, 0);
+            ctx.stroke();
+          }
+
+          if (axis.getYShow() && (showTicks || showNumbers)) {
+            ctx.translate(-positionX, positionY);
+            ctx.strokeStyle = toRgba(axis.getYColor());
+            ctx.beginPath();
+
             for (
               let y = Math.floor(startY) - gridOffsetY, yl = Math.ceil(endY);
               y < yl;
@@ -98,10 +101,11 @@ export class AxisCtxRendererHandler extends CtxRendererHandler {
               }
               ctx.restore();
             }
+
+            ctx.moveTo(0, startY);
+            ctx.lineTo(0, endY);
+            ctx.stroke();
           }
-          ctx.moveTo(0, startY);
-          ctx.lineTo(0, endY);
-          ctx.stroke();
         })
       )
     );

@@ -5,6 +5,8 @@ export declare class Axis extends Component {
     static Manager: typeof AxisManager;
     private xColor;
     private yColor;
+    private xShow;
+    private yShow;
     private size;
     private lineWidth;
     private showTicks;
@@ -18,6 +20,10 @@ export declare class Axis extends Component {
     setXColor(xColor: vec4): this;
     getYColor(): import("gl-matrix").mat2;
     setYColor(yColor: vec4): this;
+    getXShow(): boolean;
+    setXShow(xShow: boolean): this;
+    getYShow(): boolean;
+    setYShow(yShow: boolean): this;
     getLineWidth(): number;
     setLineWidth(lineWidth: number): this;
     getShowTicks(): boolean;
