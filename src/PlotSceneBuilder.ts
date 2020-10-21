@@ -13,7 +13,8 @@ import { Axis, Grid } from "./components";
 export class PlotSceneBuilder {
   protected scene: Scene = new Scene()
     .addEntity(
-      new Entity().addTag("grid", "axis").addComponent(new Axis(), new Grid()),
+      new Entity().addTag("axis").addComponent(new Axis()),
+      new Entity().addTag("grid").addComponent(new Grid()),
       new Entity()
         .addTag("camera")
         .addComponent(

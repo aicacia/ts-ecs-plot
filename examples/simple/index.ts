@@ -19,6 +19,7 @@ import {
   Point,
   PointType,
   PointsPlot,
+  Grid,
 } from "../../src";
 import { WebPlotSceneBuilder } from "../../src/web";
 import { none, Option } from "@aicacia/core";
@@ -66,9 +67,15 @@ class ArcHandler extends Component {
   }
 }
 
-function onLoad() {
-  const canvas = new WebCanvas().set(512, 512),
+async function onLoad() {
+  const canvas = new WebCanvas(
+      document.getElementById("canvas") as HTMLCanvasElement
+    ).set(512, 512),
     scene = new WebPlotSceneBuilder(canvas)
+      .updateGrid((entity) => {
+        entity.getRequiredComponent(Grid).setSize(5);
+        return entity;
+      })
       .updateScene((scene) => {
         const staticLineEnd = new Entity()
             .addTag("static-line-end")
@@ -150,23 +157,13 @@ function onLoad() {
       .build(),
     loop = new Loop(() => scene.update());
 
-  const app = document.getElementById("app"),
-    download = document.getElementById("download");
+  (document.getElementById(
+    "download"
+  ) as HTMLButtonElement).addEventListener("click", () =>
+    window.open(canvas.getImageURI())
+  );
 
-  if (app) {
-    app.style.left = "0px";
-    app.style.top = "0px";
-    app.style.position = "relative";
-    app.style.overflow = "hidden";
-    app.style.width = `${canvas.getWidth()}px`;
-    app.style.height = `${canvas.getHeight()}px`;
-    app.appendChild(canvas.getElement());
-  }
-  if (download) {
-    download.onclick = () => window.open(canvas.getImageURI());
-  }
-
-  loop.start();
+  await loop.start();
 }
 
 window.addEventListener("load", onLoad);

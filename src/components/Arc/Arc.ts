@@ -17,9 +17,10 @@ export class Arc extends Component {
   static Manager = ArcManager;
 
   private radius = 1.0;
+  private lineWidth = 1.0;
   private direction: Direction = Direction.CCW;
-  private start: vec2 = vec2.fromValues(0, 1);
-  private end: vec2 = vec2.fromValues(0, 1);
+  private start: vec2 = vec2.fromValues(1, 0);
+  private end: vec2 = vec2.fromValues(1, 0);
   private color: vec4 = vec4.fromValues(0, 0, 0, 1.0);
 
   getRadius() {
@@ -28,6 +29,14 @@ export class Arc extends Component {
   setRadius(radius: number) {
     this.radius = radius;
     return this;
+  }
+
+  setLineWidth(lineWidth: number) {
+    this.lineWidth = lineWidth;
+    return this;
+  }
+  getLineWidth() {
+    return this.lineWidth;
   }
 
   getStartLocalPosition(out: vec2) {

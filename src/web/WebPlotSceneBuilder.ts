@@ -2,6 +2,7 @@ import { Input } from "@aicacia/engine";
 import {
   ArcCtxRendererHandler,
   AxisCtxRendererHandler,
+  BoxPlotCtxRendererHandler,
   GridCtxRendererHandler,
   PlotCtxRendererHandler,
   LineCtxRendererHandler,
@@ -9,6 +10,8 @@ import {
 } from "./plugins";
 import {
   CtxRenderer,
+  UITextCtxRendererHandler,
+  SpriteCtxRendererHandler,
   WebCanvas,
   WebEventListener,
 } from "@aicacia/engine/lib/web";
@@ -27,12 +30,15 @@ export class WebPlotSceneBuilder extends PlotSceneBuilder {
         canvas,
         canvas.getElement().getContext("2d") as CanvasRenderingContext2D
       ).addRendererHandler(
+        new SpriteCtxRendererHandler(),
         new ArcCtxRendererHandler(),
         new AxisCtxRendererHandler(),
+        new BoxPlotCtxRendererHandler(),
         new GridCtxRendererHandler(),
         new PlotCtxRendererHandler(),
         new LineCtxRendererHandler(),
-        new PointCtxRendererHandler()
+        new PointCtxRendererHandler(),
+        new UITextCtxRendererHandler()
       )
     );
   }

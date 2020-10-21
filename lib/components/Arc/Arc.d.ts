@@ -8,12 +8,15 @@ export declare enum Direction {
 export declare class Arc extends Component {
     static Manager: typeof ArcManager;
     private radius;
+    private lineWidth;
     private direction;
     private start;
     private end;
     private color;
     getRadius(): number;
     setRadius(radius: number): this;
+    setLineWidth(lineWidth: number): this;
+    getLineWidth(): number;
     getStartLocalPosition(out: vec2): vec2;
     getStart(out: vec2): vec2;
     setStart(start: vec2): this;

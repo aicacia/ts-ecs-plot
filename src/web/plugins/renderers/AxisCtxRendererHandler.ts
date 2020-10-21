@@ -6,6 +6,8 @@ import { AxisManager } from "../../../components/Axis";
 const VEC2_0 = vec2.create();
 
 export class AxisCtxRendererHandler extends CtxRendererHandler {
+  static rendererHandlerPriority = -99999;
+
   onRender() {
     const camera = this.getCamera(),
       cameraTransform = TransformComponent.getTransform(

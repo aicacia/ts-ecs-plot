@@ -7,6 +7,8 @@ const VEC2_0 = vec2.create(),
   MAT2D_0 = mat2d.create();
 
 export class GridCtxRendererHandler extends CtxRendererHandler {
+  static rendererHandlerPriority = -98999;
+
   onRender() {
     const camera = this.getCamera(),
       cameraTransform = TransformComponent.getRequiredTransform(
@@ -20,8 +22,6 @@ export class GridCtxRendererHandler extends CtxRendererHandler {
       halfHeight = height * 0.5,
       x = position[0],
       y = position[1],
-      gridOffsetX = x % 1,
-      gridOffsetY = y % 1,
       startX = -halfWidth,
       endX = halfWidth,
       startY = -halfHeight,
@@ -32,7 +32,9 @@ export class GridCtxRendererHandler extends CtxRendererHandler {
     this.getManager(GridManager).map((manager) =>
       manager.getComponents().forEach((grid) =>
         renderer.render((ctx) => {
-          const size = grid.getSize();
+          const size = grid.getSize(),
+            gridOffsetX = x % size,
+            gridOffsetY = y % size;
 
           ctx.lineWidth = scale * grid.getLineWidth();
           ctx.strokeStyle = toRgba(grid.getColor());
