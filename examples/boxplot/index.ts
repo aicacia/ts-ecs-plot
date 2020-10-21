@@ -1,4 +1,4 @@
-import { Camera2D, Entity, Loop, Transform2D, UIText } from "@aicacia/engine";
+import { Entity, Loop, Transform2D, UIText } from "@aicacia/engine";
 import { WebCanvas } from "@aicacia/engine/lib/web";
 import { vec2 } from "gl-matrix";
 import { BoxPlot } from "../../src";

@@ -1,5 +1,5 @@
 import { mat2d } from "gl-matrix";
-import { equals, TAU, toRgba, TransformComponent } from "@aicacia/engine";
+import { toRgba, TransformComponent } from "@aicacia/engine";
 import { CtxRendererHandler } from "@aicacia/engine/lib/web";
 import { BoxPlotManager } from "../../../components/BoxPlot";
 
