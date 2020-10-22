@@ -62,18 +62,6 @@ export class BoxPlot extends Component {
     return this.min;
   }
   setMin(min: number) {
-    if (min > this.q1) {
-      this.q1 = min;
-    }
-    if (min > this.median) {
-      this.median = min;
-    }
-    if (min > this.q3) {
-      this.q3 = min;
-    }
-    if (min > this.max) {
-      this.max = min;
-    }
     this.min = min;
     return this;
   }
@@ -82,9 +70,6 @@ export class BoxPlot extends Component {
     return this.q1;
   }
   setQ1(q1: number) {
-    if (q1 < this.min) {
-      q1 = this.min;
-    }
     this.q1 = q1;
     return this;
   }
@@ -93,12 +78,6 @@ export class BoxPlot extends Component {
     return this.median;
   }
   setMedian(median: number) {
-    if (median < this.q1) {
-      median = this.q1;
-    }
-    if (median > this.q3) {
-      median = this.q3;
-    }
     this.median = median;
     return this;
   }
@@ -107,9 +86,6 @@ export class BoxPlot extends Component {
     return this.q3;
   }
   setQ3(q3: number) {
-    if (q3 > this.max) {
-      q3 = this.max;
-    }
     this.q3 = q3;
     return this;
   }
@@ -118,18 +94,6 @@ export class BoxPlot extends Component {
     return this.max;
   }
   setMax(max: number) {
-    if (max < this.q1) {
-      this.q1 = max;
-    }
-    if (max < this.median) {
-      this.median = max;
-    }
-    if (max < this.q3) {
-      this.q3 = max;
-    }
-    if (max < this.max) {
-      this.max = max;
-    }
     this.max = max;
     return this;
   }
