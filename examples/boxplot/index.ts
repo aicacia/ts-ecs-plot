@@ -1,4 +1,4 @@
-import { Entity, Loop, Transform2D, UIText } from "@aicacia/engine";
+import { Entity, EventLoop, Input, Transform2D, UIText } from "@aicacia/engine";
 import { WebCanvas } from "@aicacia/engine/lib/web";
 import { vec2 } from "gl-matrix";
 import { BoxPlot } from "../../src";
@@ -31,8 +31,9 @@ async function onLoad() {
             )
         );
       })
-      .build(),
-    loop = new Loop(() => scene.update());
+      .build();
+
+  new EventLoop(scene.getRequiredPlugin(Input), () => scene.update());
 
   (document.getElementById(
     "download"
@@ -40,7 +41,7 @@ async function onLoad() {
     window.open(canvas.getImageURI())
   );
 
-  await loop.start();
+  scene.update();
 }
 
 window.addEventListener("load", onLoad);

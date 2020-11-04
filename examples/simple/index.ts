@@ -3,10 +3,11 @@ import {
   Component,
   Entity,
   getPointFromAngle,
-  Loop,
+  EventLoop,
   Time,
   Transform2D,
   HALF_PI,
+  Input,
 } from "@aicacia/engine";
 import { WebCanvas } from "@aicacia/engine/lib/web";
 import {
@@ -154,8 +155,9 @@ async function onLoad() {
             )
         );
       })
-      .build(),
-    loop = new Loop(() => scene.update());
+      .build();
+
+  new EventLoop(scene.getRequiredPlugin(Input), () => scene.update());
 
   (document.getElementById(
     "download"
@@ -163,7 +165,7 @@ async function onLoad() {
     window.open(canvas.getImageURI())
   );
 
-  await loop.start();
+  scene.update();
 }
 
 window.addEventListener("load", onLoad);
