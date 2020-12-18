@@ -1,4 +1,4 @@
-import { Component } from "@aicacia/engine";
+import { Component } from "@aicacia/ecs";
 import { PlotSection } from "./PlotSection";
 import { PlotManager } from "./PlotManager";
 

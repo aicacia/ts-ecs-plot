@@ -1,10 +1,10 @@
 {
-  "name": "@aicacia/plot",
+  "name": "@aicacia/ecs-plot",
   "version": "0.1.0",
-  "description": "a 2d plotting lib",
+  "description": "a 2d plotting lib for ecs",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/aicacia/libs/ts-plot.git"
+    "url": "https://gitlab.com/aicacia/libs/ts-ecs-plot.git"
   },
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -25,6 +25,7 @@
     }
   },
   "keywords": [
+    "ecs",
     "math",
     "plot",
     "2d"
@@ -34,11 +35,11 @@
   "readmeFilename": "README.md",
   "devDependencies": {
     "@types/tape": "^4.13.0",
-    "@typescript-eslint/eslint-plugin": "^4.6.0",
-    "@typescript-eslint/parser": "^4.6.0",
-    "eslint": "^7.12.1",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.15.0",
     "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-prettier": "^3.3.0",
     "husky": "^4.3.0",
     "nyc": "^15.1.0",
     "parcel-bundler": "^1.12.4",
@@ -46,20 +47,19 @@
     "tap-nyc": "^1.0.3",
     "tap-spec": "^5.0.0",
     "tape": "^5.0.1",
-    "ts-node": "^9.0.0",
+    "ts-node": "^9.1.1",
     "typedoc": "^0.19.2",
     "tslib": "^2.0.3",
-    "typescript": "^4.0.5"
+    "typescript": "^4.1.3"
   },
   "dependencies": {
-    "@aicacia/engine": "git+https://git@gitlab.com/aicacia/libs/ts-engine",
-    "@aicacia/core": "^0.1.9",
-    "@aicacia/hash": "^0.1.5",
-    "@aicacia/json": "^0.1.5",
+    "@aicacia/ecs": "git+https://git@gitlab.com/aicacia/libs/ts-ecs",
+    "@aicacia/ecs-game": "git+https://git@gitlab.com/aicacia/libs/ts-ecs-game",
+    "@aicacia/core": "^0.1.11",
     "gl-matrix": "^3.3.0"
   },
   "peerDependencies": {
-    "tslib": "^2.0.3"
+    "tslib": ">=2"
   },
   "nyc": {
     "include": [

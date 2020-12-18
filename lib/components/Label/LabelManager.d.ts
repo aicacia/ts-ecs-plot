@@ -1,4 +1,4 @@
-import { DefaultDescriptorManager } from "@aicacia/engine";
+import { DefaultDescriptorManager } from "@aicacia/ecs";
+import type { Label } from "./Label";
 export declare class LabelManager extends DefaultDescriptorManager<Label> {
 }
-import { Label } from "./Label";

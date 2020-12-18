@@ -1,9 +1,6 @@
 import { vec2, vec4 } from "gl-matrix";
-import {
-  Component,
-  getAngleFromPoint,
-  TransformComponent,
-} from "@aicacia/engine";
+import { Component } from "@aicacia/ecs";
+import { getAngleFromPoint, TransformComponent } from "@aicacia/ecs-game";
 import { ArcManager } from "./ArcManager";
 
 export enum Direction {

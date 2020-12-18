@@ -1,6 +1,6 @@
 import { vec2 } from "gl-matrix";
-import { toRgba, TransformComponent } from "@aicacia/engine";
-import { CtxRendererHandler } from "@aicacia/engine/lib/web";
+import { toRgba, TransformComponent } from "@aicacia/ecs-game";
+import { CtxRendererHandler } from "@aicacia/ecs-game/lib/web";
 import { AxisManager } from "../../../components/Axis";
 
 const VEC2_0 = vec2.create();

@@ -1,6 +1,6 @@
 import { mat2d, vec2 } from "gl-matrix";
-import { toRgba, TransformComponent } from "@aicacia/engine";
-import { CtxRendererHandler } from "@aicacia/engine/lib/web";
+import { toRgba, TransformComponent } from "@aicacia/ecs-game";
+import { CtxRendererHandler } from "@aicacia/ecs-game/lib/web";
 import {
   PlotManager,
   PointsPlot,

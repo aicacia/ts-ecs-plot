@@ -1,4 +1,4 @@
-import { Component } from "@aicacia/engine";
+import { Component } from "@aicacia/ecs";
 import { LabelManager } from "./LabelManager";
 export declare class Label extends Component {
     static Manager: typeof LabelManager;

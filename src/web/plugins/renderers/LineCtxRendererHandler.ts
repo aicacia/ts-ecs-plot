@@ -1,6 +1,6 @@
 import { vec2 } from "gl-matrix";
-import { toRgba } from "@aicacia/engine";
-import { CtxRendererHandler } from "@aicacia/engine/lib/web";
+import { toRgba } from "@aicacia/ecs-game";
+import { CtxRendererHandler } from "@aicacia/ecs-game/lib/web";
 import { LineManager, LineType } from "../../../components/Line";
 
 const VEC2_0 = vec2.create();

@@ -1,5 +1,6 @@
 import { vec2, vec4 } from "gl-matrix";
-import { Component, Entity, TransformComponent } from "@aicacia/engine";
+import { Component, Entity } from "@aicacia/ecs";
+import { TransformComponent } from "@aicacia/ecs-game";
 import { LineManager } from "./LineManager";
 import { none, Option } from "@aicacia/core";
 

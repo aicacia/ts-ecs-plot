@@ -1,4 +1,4 @@
-import { Component } from "@aicacia/engine";
+import { Component } from "@aicacia/ecs";
 import { vec4 } from "gl-matrix";
 import { BoxPlotManager } from "./BoxPlotManager";
 export declare class BoxPlot extends Component {

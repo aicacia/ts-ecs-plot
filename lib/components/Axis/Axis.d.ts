@@ -1,5 +1,5 @@
 import { vec4 } from "gl-matrix";
-import { Component } from "@aicacia/engine";
+import { Component } from "@aicacia/ecs";
 import { AxisManager } from "./AxisManager";
 export declare class Axis extends Component {
     static Manager: typeof AxisManager;

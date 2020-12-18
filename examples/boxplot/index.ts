@@ -1,5 +1,6 @@
-import { Entity, EventLoop, Input, Transform2D, UIText } from "@aicacia/engine";
-import { WebCanvas } from "@aicacia/engine/lib/web";
+import { Entity } from "@aicacia/ecs";
+import { Transform2D, UIText } from "@aicacia/ecs-game";
+import { WebCanvas } from "@aicacia/ecs-game/lib/web";
 import { vec2 } from "gl-matrix";
 import { BoxPlot } from "../../src";
 import { WebPlotSceneBuilder } from "../../src/web";
@@ -31,9 +32,8 @@ async function onLoad() {
             )
         );
       })
+      .eventLoop()
       .build();
-
-  new EventLoop(scene.getRequiredPlugin(Input), () => scene.update());
 
   (document.getElementById(
     "download"
@@ -41,7 +41,7 @@ async function onLoad() {
     window.open(canvas.getImageURI())
   );
 
-  scene.update();
+  scene.init();
 }
 
 window.addEventListener("load", onLoad);

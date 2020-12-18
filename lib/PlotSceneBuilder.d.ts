@@ -1,6 +1,8 @@
-import { Entity, Scene } from "@aicacia/engine";
+import { Entity, Scene } from "@aicacia/ecs";
 export declare class PlotSceneBuilder {
     protected scene: Scene;
+    loop(): this;
+    eventLoop(): this;
     disableCameraControl(): this;
     updateScene(updater: (scene: Scene) => Scene): this;
     updateEntity(tags: string[], updater: (grid: Entity) => Entity): this;

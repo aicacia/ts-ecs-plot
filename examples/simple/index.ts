@@ -1,15 +1,12 @@
 import { vec2, vec4 } from "gl-matrix";
+import { Component, Entity } from "@aicacia/ecs";
 import {
-  Component,
-  Entity,
   getPointFromAngle,
-  EventLoop,
   Time,
   Transform2D,
   HALF_PI,
-  Input,
-} from "@aicacia/engine";
-import { WebCanvas } from "@aicacia/engine/lib/web";
+} from "@aicacia/ecs-game";
+import { WebCanvas } from "@aicacia/ecs-game/lib/web";
 import {
   Arc,
   Direction,
@@ -155,9 +152,8 @@ async function onLoad() {
             )
         );
       })
+      .loop()
       .build();
-
-  new EventLoop(scene.getRequiredPlugin(Input), () => scene.update());
 
   (document.getElementById(
     "download"
@@ -165,7 +161,7 @@ async function onLoad() {
     window.open(canvas.getImageURI())
   );
 
-  scene.update();
+  scene.init();
 }
 
 window.addEventListener("load", onLoad);

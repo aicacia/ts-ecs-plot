@@ -1,5 +1,5 @@
 import { vec4 } from "gl-matrix";
-import { Component } from "@aicacia/engine";
+import { Component } from "@aicacia/ecs";
 import { PointManager } from "./PointManager";
 export declare enum PointType {
     None = "None",

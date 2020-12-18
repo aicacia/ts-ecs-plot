@@ -1,12 +1,13 @@
+import { Entity, Scene } from "@aicacia/ecs";
 import {
   Camera2D,
   Camera2DControl,
-  Entity,
+  EventLoop,
   Input,
-  Scene,
+  Loop,
   Time,
   Transform2D,
-} from "@aicacia/engine";
+} from "@aicacia/ecs-game";
 import { vec2, vec4 } from "gl-matrix";
 import { Axis, Grid } from "./components";
 
@@ -25,6 +26,16 @@ export class PlotSceneBuilder {
     )
     .addPlugin(new Time(), new Input())
     .maintain();
+
+  loop() {
+    this.scene.addPlugin(new Loop());
+    return this;
+  }
+
+  eventLoop() {
+    this.scene.addPlugin(new EventLoop(this.scene.getRequiredPlugin(Input)));
+    return this;
+  }
 
   disableCameraControl() {
     return this.updateCamera((entity) => {

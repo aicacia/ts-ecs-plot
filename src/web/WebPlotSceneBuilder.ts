@@ -1,4 +1,4 @@
-import { Input } from "@aicacia/engine";
+import { Input } from "@aicacia/ecs-game";
 import {
   ArcCtxRendererHandler,
   AxisCtxRendererHandler,
@@ -14,7 +14,7 @@ import {
   SpriteCtxRendererHandler,
   WebCanvas,
   WebEventListener,
-} from "@aicacia/engine/lib/web";
+} from "@aicacia/ecs-game/lib/web";
 import { PlotSceneBuilder } from "../PlotSceneBuilder";
 
 export class WebPlotSceneBuilder extends PlotSceneBuilder {

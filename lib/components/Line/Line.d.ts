@@ -1,5 +1,5 @@
 import { vec2, vec4 } from "gl-matrix";
-import { Component, Entity } from "@aicacia/engine";
+import { Component, Entity } from "@aicacia/ecs";
 import { LineManager } from "./LineManager";
 import { Option } from "@aicacia/core";
 export declare enum LineType {

@@ -1,5 +1,5 @@
 import { vec2, vec4 } from "gl-matrix";
-import { Component } from "@aicacia/engine";
+import { Component } from "@aicacia/ecs";
 import { ArcManager } from "./ArcManager";
 export declare enum Direction {
     CW = 1,

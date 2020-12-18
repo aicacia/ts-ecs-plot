@@ -1,4 +1,4 @@
-import { DefaultDescriptorManager } from "@aicacia/engine";
+import { DefaultDescriptorManager } from "@aicacia/ecs";
+import type { BoxPlot } from "./BoxPlot";
 export declare class BoxPlotManager extends DefaultDescriptorManager<BoxPlot> {
 }
-import { BoxPlot } from "./BoxPlot";

@@ -1,6 +1,6 @@
 import { mat2d } from "gl-matrix";
-import { equals, TAU, toRgba, TransformComponent } from "@aicacia/engine";
-import { CtxRendererHandler } from "@aicacia/engine/lib/web";
+import { equals, TAU, toRgba, TransformComponent } from "@aicacia/ecs-game";
+import { CtxRendererHandler } from "@aicacia/ecs-game/lib/web";
 import { ArcManager, Direction } from "../../../components/Arc";
 
 const MAT2D_0 = mat2d.create();

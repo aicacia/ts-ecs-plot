@@ -1,5 +1,4 @@
-import { DefaultDescriptorManager } from "@aicacia/engine";
+import { DefaultDescriptorManager } from "@aicacia/ecs";
+import type { Plot } from "./Plot";
 
 export class PlotManager extends DefaultDescriptorManager<Plot> {}
-
-import { Plot } from "./Plot";
