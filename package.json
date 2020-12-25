@@ -15,7 +15,7 @@
     "coverage": "nyc --reporter=lcov --require ts-node/register tape src/**/*.test.{ts,tsx} | tap-spec; nyc report ---reporter=text",
     "clean": "rm -rf ./lib",
     "lint": "eslint . --fix",
-    "doc": "typedoc",
+    "doc": "typedoc --entryPoints src",
     "boxplot": "parcel examples/boxplot/index.html",
     "simple": "parcel examples/simple/index.html"
   },
@@ -34,32 +34,32 @@
   "license": "(MIT OR Apache-2.0)",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "@types/tape": "^4.13.0",
-    "@typescript-eslint/eslint-plugin": "^4.10.0",
-    "@typescript-eslint/parser": "^4.10.0",
-    "eslint": "^7.15.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.3.0",
-    "husky": "^4.3.0",
-    "nyc": "^15.1.0",
-    "parcel-bundler": "^1.12.4",
-    "prettier": "^2.1.2",
-    "tap-nyc": "^1.0.3",
-    "tap-spec": "^5.0.0",
-    "tape": "^5.0.1",
-    "ts-node": "^9.1.1",
-    "typedoc": "^0.19.2",
-    "tslib": "^2.0.3",
-    "typescript": "^4.1.3"
+    "@types/tape": "4",
+    "@typescript-eslint/eslint-plugin": "4",
+    "@typescript-eslint/parser": "4",
+    "eslint": "7",
+    "eslint-config-prettier": "7",
+    "eslint-plugin-prettier": "3",
+    "husky": "4",
+    "nyc": "15",
+    "parcel-bundler": "1",
+    "prettier": "2",
+    "tap-nyc": "1",
+    "tap-spec": "5",
+    "tape": "5",
+    "ts-node": "9",
+    "typedoc": "beta",
+    "tslib": "2",
+    "typescript": "4"
   },
   "dependencies": {
     "@aicacia/ecs": "git+https://git@gitlab.com/aicacia/libs/ts-ecs",
     "@aicacia/ecs-game": "git+https://git@gitlab.com/aicacia/libs/ts-ecs-game",
-    "@aicacia/core": "^0.1.11",
-    "gl-matrix": "^3.3.0"
+    "@aicacia/core": "0",
+    "gl-matrix": "3"
   },
   "peerDependencies": {
-    "tslib": ">=2"
+    "tslib": "2"
   },
   "nyc": {
     "include": [
