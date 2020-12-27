@@ -65,7 +65,7 @@ class ArcHandler extends Component {
   }
 }
 
-async function onLoad() {
+function onLoad() {
   const canvas = new WebCanvas(
       document.getElementById("canvas") as HTMLCanvasElement
     ).set(512, 512),

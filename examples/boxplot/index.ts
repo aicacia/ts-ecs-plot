@@ -5,7 +5,7 @@ import { vec2 } from "gl-matrix";
 import { BoxPlot } from "../../src";
 import { WebPlotSceneBuilder } from "../../src/web";
 
-async function onLoad() {
+function onLoad() {
   const canvas = new WebCanvas(
       document.getElementById("canvas") as HTMLCanvasElement
     ).set(512, 512),

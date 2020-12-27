@@ -6,7 +6,6 @@ stages:
 
 before_script:
   - npm install
-  - npm run lint
 
 cache:
   paths:
@@ -16,6 +15,7 @@ test:
   stage: test
   script:
     - npm run coverage
+    - npm run lint
   artifacts:
     paths:
       - coverage

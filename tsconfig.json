@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2015",
     "module": "commonjs",
     "importHelpers": true,
     "moduleResolution": "node",
@@ -11,9 +11,5 @@
     "lib": ["esnext", "dom"]
   },
   "include": ["src"],
-  "exclude": ["src/**/*.test.*"],
-  "typedocOptions": {
-    "mode": "modules",
-    "out": "docs"
-  }
+  "exclude": ["src/**/*.test.*"]
 }
