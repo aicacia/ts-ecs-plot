@@ -116,13 +116,14 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_arc_arc.arc.html#emit" class="tsd-kind-icon">emit</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_arc_arc.arc.html#eventnames" class="tsd-kind-icon">event<wbr>Names</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_arc_arc.arc.html#fromjson" class="tsd-kind-icon">fromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getangle" class="tsd-kind-icon">get<wbr>Angle</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getcolor" class="tsd-kind-icon">get<wbr>Color</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="components_arc_arc.arc.html#getcomponent" class="tsd-kind-icon">get<wbr>Component</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_arc_arc.arc.html#getconstructor" class="tsd-kind-icon">get<wbr>Constructor</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getdirection" class="tsd-kind-icon">get<wbr>Direction</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getend" class="tsd-kind-icon">get<wbr>End</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getendangle" class="tsd-kind-icon">get<wbr>End<wbr>Angle</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getendlocalposition" class="tsd-kind-icon">get<wbr>End<wbr>Local<wbr>Position</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getendposition" class="tsd-kind-icon">get<wbr>End<wbr>Position</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_arc_arc.arc.html#getentity" class="tsd-kind-icon">get<wbr>Entity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getlinewidth" class="tsd-kind-icon">get<wbr>Line<wbr>Width</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="components_arc_arc.arc.html#getmanager" class="tsd-kind-icon">get<wbr>Manager</a></li>
@@ -142,7 +143,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="components_arc_arc.arc.html#getscenemanager" class="tsd-kind-icon">get<wbr>Scene<wbr>Manager</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getstart" class="tsd-kind-icon">get<wbr>Start</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getstartangle" class="tsd-kind-icon">get<wbr>Start<wbr>Angle</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getstartlocalposition" class="tsd-kind-icon">get<wbr>Start<wbr>Local<wbr>Position</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_arc_arc.arc.html#getstartposition" class="tsd-kind-icon">get<wbr>Start<wbr>Position</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_arc_arc.arc.html#listenercount" class="tsd-kind-icon">listener<wbr>Count</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_arc_arc.arc.html#listeners" class="tsd-kind-icon">listeners</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_arc_arc.arc.html#off" class="tsd-kind-icon">off</a></li>
@@ -215,27 +216,27 @@
 					<div class="tsd-signature tsd-kind-icon">color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">vec4</span><span class="tsd-signature-symbol"> = vec4.fromValues(0, 0, 0, 1.0)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L21">src/components/Arc/Arc.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L23">src/components/Arc/Arc.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="direction" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> direction</h3>
-					<div class="tsd-signature tsd-kind-icon">direction<span class="tsd-signature-symbol">:</span> <a href="../enums/components_arc_arc.direction.html" class="tsd-signature-type">Direction</a><span class="tsd-signature-symbol"> = Direction.CCW</span></div>
+					<div class="tsd-signature tsd-kind-icon">direction<span class="tsd-signature-symbol">:</span> <a href="../enums/components_arc_arc.direction.html" class="tsd-signature-type">Direction</a><span class="tsd-signature-symbol"> = Direction.CW</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L18">src/components/Arc/Arc.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L20">src/components/Arc/Arc.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="end" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> end</h3>
-					<div class="tsd-signature tsd-kind-icon">end<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol"> = vec2.fromValues(1, 0)</span></div>
+					<div class="tsd-signature tsd-kind-icon">end<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Entity</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = none()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L20">src/components/Arc/Arc.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L22">src/components/Arc/Arc.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -245,7 +246,7 @@
 					<div class="tsd-signature tsd-kind-icon">line<wbr>Width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L17">src/components/Arc/Arc.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L19">src/components/Arc/Arc.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -255,17 +256,17 @@
 					<div class="tsd-signature tsd-kind-icon">radius<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L16">src/components/Arc/Arc.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L18">src/components/Arc/Arc.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="start" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> start</h3>
-					<div class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol"> = vec2.fromValues(1, 0)</span></div>
+					<div class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Entity</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = none()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L19">src/components/Arc/Arc.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L21">src/components/Arc/Arc.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -275,7 +276,7 @@
 					<div class="tsd-signature tsd-kind-icon">Manager<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">typeof </span><a href="components_arc_arcmanager.arcmanager.html" class="tsd-signature-type">ArcManager</a><span class="tsd-signature-symbol"> = ArcManager</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L14">src/components/Arc/Arc.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L16">src/components/Arc/Arc.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -463,6 +464,23 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getangle" class="tsd-anchor"></a>
+					<h3>get<wbr>Angle</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Angle<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L92">src/components/Arc/Arc.ts:92</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getcolor" class="tsd-anchor"></a>
 					<h3>get<wbr>Color</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -472,7 +490,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L95">src/components/Arc/Arc.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L108">src/components/Arc/Arc.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec4</span></h4>
@@ -535,7 +553,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L87">src/components/Arc/Arc.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L100">src/components/Arc/Arc.ts:100</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../enums/components_arc_arc.direction.html" class="tsd-signature-type">Direction</a></h4>
@@ -546,22 +564,16 @@
 					<a name="getend" class="tsd-anchor"></a>
 					<h3>get<wbr>End</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>End<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>End<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Entity</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L71">src/components/Arc/Arc.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L37">src/components/Arc/Arc.ts:37</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>out: <span class="tsd-signature-type">vec2</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec2</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Entity</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -575,7 +587,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L79">src/components/Arc/Arc.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L81">src/components/Arc/Arc.ts:81</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -583,16 +595,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getendlocalposition" class="tsd-anchor"></a>
-					<h3>get<wbr>End<wbr>Local<wbr>Position</h3>
+					<a name="getendposition" class="tsd-anchor"></a>
+					<h3>get<wbr>End<wbr>Position</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>End<wbr>Local<wbr>Position<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>End<wbr>Position<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L61">src/components/Arc/Arc.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L47">src/components/Arc/Arc.ts:47</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -632,7 +644,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L35">src/components/Arc/Arc.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L66">src/components/Arc/Arc.ts:66</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -741,7 +753,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L23">src/components/Arc/Arc.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L54">src/components/Arc/Arc.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -976,22 +988,16 @@
 					<a name="getstart" class="tsd-anchor"></a>
 					<h3>get<wbr>Start</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Start<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Start<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Entity</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L49">src/components/Arc/Arc.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L29">src/components/Arc/Arc.ts:29</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>out: <span class="tsd-signature-type">vec2</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec2</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Entity</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1005,7 +1011,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L57">src/components/Arc/Arc.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L70">src/components/Arc/Arc.ts:70</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1013,16 +1019,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getstartlocalposition" class="tsd-anchor"></a>
-					<h3>get<wbr>Start<wbr>Local<wbr>Position</h3>
+					<a name="getstartposition" class="tsd-anchor"></a>
+					<h3>get<wbr>Start<wbr>Position</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Start<wbr>Local<wbr>Position<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Start<wbr>Position<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L39">src/components/Arc/Arc.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L41">src/components/Arc/Arc.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1497,7 +1503,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L91">src/components/Arc/Arc.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L104">src/components/Arc/Arc.ts:104</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1520,7 +1526,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L83">src/components/Arc/Arc.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L96">src/components/Arc/Arc.ts:96</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1537,19 +1543,19 @@
 					<a name="setend" class="tsd-anchor"></a>
 					<h3>set<wbr>End</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>End<span class="tsd-signature-symbol">(</span>end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="components_arc_arc.arc.html" class="tsd-signature-type">Arc</a></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>End<span class="tsd-signature-symbol">(</span>end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Entity</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="components_arc_arc.arc.html" class="tsd-signature-type">Arc</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L75">src/components/Arc/Arc.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L33">src/components/Arc/Arc.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>end: <span class="tsd-signature-type">vec2</span></h5>
+									<h5>end: <span class="tsd-signature-type">Entity</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="components_arc_arc.arc.html" class="tsd-signature-type">Arc</a></h4>
@@ -1566,7 +1572,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L31">src/components/Arc/Arc.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L62">src/components/Arc/Arc.ts:62</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1612,7 +1618,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L26">src/components/Arc/Arc.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L57">src/components/Arc/Arc.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1629,19 +1635,19 @@
 					<a name="setstart" class="tsd-anchor"></a>
 					<h3>set<wbr>Start</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Start<span class="tsd-signature-symbol">(</span>start<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="components_arc_arc.arc.html" class="tsd-signature-type">Arc</a></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Start<span class="tsd-signature-symbol">(</span>start<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Entity</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="components_arc_arc.arc.html" class="tsd-signature-type">Arc</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/25c3a75/src/components/Arc/Arc.ts#L53">src/components/Arc/Arc.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Arc/Arc.ts#L25">src/components/Arc/Arc.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>start: <span class="tsd-signature-type">vec2</span></h5>
+									<h5>start: <span class="tsd-signature-type">Entity</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="components_arc_arc.arc.html" class="tsd-signature-type">Arc</a></h4>
@@ -1942,6 +1948,9 @@
 								<a href="components_arc_arc.arc.html#fromjson" class="tsd-kind-icon">fromJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="components_arc_arc.arc.html#getangle" class="tsd-kind-icon">get<wbr>Angle</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="components_arc_arc.arc.html#getcolor" class="tsd-kind-icon">get<wbr>Color</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
@@ -1960,7 +1969,7 @@
 								<a href="components_arc_arc.arc.html#getendangle" class="tsd-kind-icon">get<wbr>End<wbr>Angle</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="components_arc_arc.arc.html#getendlocalposition" class="tsd-kind-icon">get<wbr>End<wbr>Local<wbr>Position</a>
+								<a href="components_arc_arc.arc.html#getendposition" class="tsd-kind-icon">get<wbr>End<wbr>Position</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="components_arc_arc.arc.html#getentity" class="tsd-kind-icon">get<wbr>Entity</a>
@@ -2020,7 +2029,7 @@
 								<a href="components_arc_arc.arc.html#getstartangle" class="tsd-kind-icon">get<wbr>Start<wbr>Angle</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="components_arc_arc.arc.html#getstartlocalposition" class="tsd-kind-icon">get<wbr>Start<wbr>Local<wbr>Position</a>
+								<a href="components_arc_arc.arc.html#getstartposition" class="tsd-kind-icon">get<wbr>Start<wbr>Position</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-external">
 								<a href="components_arc_arc.arc.html#listenercount" class="tsd-kind-icon">listener<wbr>Count</a>
@@ -2135,14 +2144,15 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
