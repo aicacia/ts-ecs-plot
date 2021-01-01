@@ -1,6 +1,7 @@
 import { vec2, vec4 } from "gl-matrix";
-import { Component } from "@aicacia/ecs";
+import { Component, Entity } from "@aicacia/ecs";
 import { ArcManager } from "./ArcManager";
+import { Option } from "@aicacia/core";
 export declare enum Direction {
     CW = 1,
     CCW = -1
@@ -13,18 +14,19 @@ export declare class Arc extends Component {
     private start;
     private end;
     private color;
+    setStart(start: Entity): this;
+    getStart(): Option<Entity>;
+    setEnd(end: Entity): this;
+    getEnd(): Option<Entity>;
+    getStartPosition(out: vec2): vec2;
+    getEndPosition(out: vec2): vec2;
     getRadius(): number;
     setRadius(radius: number): this;
     setLineWidth(lineWidth: number): this;
     getLineWidth(): number;
-    getStartLocalPosition(out: vec2): vec2;
-    getStart(out: vec2): vec2;
-    setStart(start: vec2): this;
     getStartAngle(): number;
-    getEndLocalPosition(out: vec2): vec2;
-    getEnd(out: vec2): vec2;
-    setEnd(end: vec2): this;
     getEndAngle(): number;
+    getAngle(): number;
     setDirection(direction: Direction): this;
     getDirection(): Direction;
     setColor(color: vec4): this;

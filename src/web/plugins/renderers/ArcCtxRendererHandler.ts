@@ -1,9 +1,9 @@
-import { mat2d } from "gl-matrix";
+import { vec2 } from "gl-matrix";
 import { equals, TAU, toRgba, TransformComponent } from "@aicacia/ecs-game";
 import { CtxRendererHandler } from "@aicacia/ecs-game/lib/web";
 import { ArcManager, Direction } from "../../../components/Arc";
 
-const MAT2D_0 = mat2d.create();
+const VEC2_0 = vec2.create();
 
 export class ArcCtxRendererHandler extends CtxRendererHandler {
   onRender() {
@@ -17,22 +17,23 @@ export class ArcCtxRendererHandler extends CtxRendererHandler {
           .flatMap(TransformComponent.getTransform)
           .map((transform) =>
             renderer.render((ctx) => {
-              const startAngle = arc.getStartAngle(),
+              const position = transform.getPosition2(VEC2_0),
+                startAngle = arc.getStartAngle(),
                 endAngle = arc.getEndAngle();
 
               ctx.lineWidth = scale * arc.getLineWidth();
               ctx.strokeStyle = toRgba(arc.getColor());
               ctx.beginPath();
               ctx.arc(
-                0,
-                0,
+                position[0],
+                position[1],
                 arc.getRadius(),
                 startAngle,
                 equals(startAngle, endAngle) ? TAU + endAngle : endAngle,
                 arc.getDirection() === Direction.CW
               );
               ctx.stroke();
-            }, transform.getMatrix2d(MAT2D_0))
+            })
           )
       )
     );

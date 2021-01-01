@@ -18,4 +18,5 @@ export declare class FunctionPlot extends PlotSection {
     setFAsymptote(fAsymptote: F): this;
     private getAsymptoteParts;
     getPoints(minX: number, maxX: number, step?: number): vec2[][];
+    getY(x: number): Option<number>;
 }

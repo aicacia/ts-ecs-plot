@@ -1,3 +1,4 @@
+import { Option } from "@aicacia/core";
 import { vec4 } from "gl-matrix";
 import { LineType } from "../Line";
 import { PointData } from "../Point";
@@ -19,4 +20,5 @@ export declare abstract class PlotSection {
     setEndPoint(endPoint: PointData): this;
     getEndPoint(): PointData;
     updateEndPoint(updater: (pointData: PointData) => PointData): this;
+    abstract getY(x: number): Option<number>;
 }

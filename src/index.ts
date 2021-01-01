@@ -1,3 +1,4 @@
+export { Builder, ShapeBuilder, PlotSceneBuilder } from "./builders";
 export {
   Arc,
   ArcManager,
@@ -22,4 +23,3 @@ export {
   F,
   FunctionPlot,
 } from "./components";
-export { PlotSceneBuilder } from "./PlotSceneBuilder";

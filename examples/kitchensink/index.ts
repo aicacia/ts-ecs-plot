@@ -1,11 +1,6 @@
 import { vec2, vec4 } from "gl-matrix";
 import { Component, Entity } from "@aicacia/ecs";
-import {
-  getPointFromAngle,
-  Time,
-  Transform2D,
-  HALF_PI,
-} from "@aicacia/ecs-game";
+import { Time, Transform2D, HALF_PI } from "@aicacia/ecs-game";
 import { WebCanvas } from "@aicacia/ecs-game/lib/web";
 import {
   Arc,
@@ -20,7 +15,6 @@ import {
   Grid,
 } from "../../src";
 import { WebPlotSceneBuilder } from "../../src/web";
-import { none, Option } from "@aicacia/core";
 
 class Rotator extends Component {
   static requiredPlugins = [Time];
@@ -36,45 +30,16 @@ class Rotator extends Component {
   }
 }
 
-const ARC_HANDLER_VEC2_0 = vec2.create();
-
-class ArcHandler extends Component {
-  private copy: Option<Entity> = none();
-
-  setCopy(copy) {
-    this.copy.replace(copy);
-    return this;
-  }
-
-  onUpdate() {
-    const copy = this.copy.unwrap().getRequiredComponent(Transform2D),
-      children = this.getRequiredEntity().getChildren(),
-      arc = children[0].getRequiredComponent(Arc),
-      point = children[1].getRequiredComponent(Transform2D),
-      rotation = copy.getLocalRotation();
-
-    const rotationVec = getPointFromAngle(ARC_HANDLER_VEC2_0, rotation);
-
-    arc.setEnd(rotationVec);
-    point.setLocalPosition(
-      vec2.scale(rotationVec, rotationVec, arc.getRadius())
-    );
-    point.setLocalRotation(rotation + HALF_PI);
-
-    return this;
-  }
-}
-
 function onLoad() {
   const canvas = new WebCanvas(
       document.getElementById("canvas") as HTMLCanvasElement
     ).set(512, 512),
     scene = new WebPlotSceneBuilder(canvas)
-      .updateGrid((entity) => {
-        entity.getRequiredComponent(Grid).setSize(5);
+      .grid((entity) => {
+        entity.getRequiredComponent(Grid).setSize(2);
         return entity;
       })
-      .updateScene((scene) => {
+      .update((scene) => {
         const staticLineEnd = new Entity()
             .addTag("static-line-end")
             .addComponent(
@@ -130,25 +95,15 @@ function onLoad() {
           staticLine,
           line,
           new Entity()
-            .addTag("arc-parent")
+            .addTag("arc")
             .addComponent(
-              new Transform2D().setLocalRotation(Math.PI * 0.25),
-              new ArcHandler().setCopy(lineStart)
-            )
-            .addChild(
-              new Entity()
-                .addTag("arc")
-                .addComponent(
-                  new Transform2D(),
-                  new Arc()
-                    .setDirection(Direction.CCW)
-                    .setRadius(5)
-                    .setColor(vec4.fromValues(0, 0, 1.0, 1))
-                ),
-              new Entity().addTag("arc-point").addComponent(
-                new Transform2D(),
-                new Point().update((data) => data.setType(PointType.Triangle))
-              )
+              new Transform2D(),
+              new Arc()
+                .setDirection(Direction.CCW)
+                .setRadius(5)
+                .setStart(lineEnd)
+                .setEnd(staticLineEnd)
+                .setColor(vec4.fromValues(0, 0, 1.0, 1))
             )
         );
       })

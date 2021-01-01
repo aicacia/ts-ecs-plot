@@ -1,3 +1,4 @@
+export { WebPlotSceneBuilder } from "./builders/WebPlotSceneBuilder";
 export {
   ArcCtxRendererHandler,
   AxisCtxRendererHandler,
@@ -7,4 +8,3 @@ export {
   LineCtxRendererHandler,
   PointCtxRendererHandler,
 } from "./plugins";
-export { WebPlotSceneBuilder } from "./WebPlotSceneBuilder";

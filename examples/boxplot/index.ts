@@ -10,13 +10,13 @@ function onLoad() {
       document.getElementById("canvas") as HTMLCanvasElement
     ).set(512, 512),
     scene = new WebPlotSceneBuilder(canvas)
-      .updateCamera((entity) => {
+      .camera((entity) => {
         entity
           .getRequiredComponent(Transform2D)
           .setLocalPosition2(vec2.fromValues(5, 5));
         return entity;
       })
-      .updateScene((scene) => {
+      .update((scene) => {
         return scene.addEntity(
           new Entity()
             .addTag("boxplot")

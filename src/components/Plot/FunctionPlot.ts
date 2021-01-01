@@ -101,4 +101,18 @@ export class FunctionPlot extends PlotSection {
 
     return this.getAsymptoteParts(out);
   }
+
+  getY(x: number) {
+    return this.fAsymptote
+      .map((fAsymptote) => {
+        const asymptote = fAsymptote(x);
+
+        if (x <= asymptote - EPSILON || x >= asymptote + EPSILON) {
+          return some(this.f(x));
+        } else {
+          return none<number>();
+        }
+      })
+      .unwrapOrElse(() => some(this.f(x)));
+  }
 }

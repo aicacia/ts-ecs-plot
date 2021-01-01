@@ -18,7 +18,8 @@
     "doc": "typedoc --entryPoints src",
     "prettier": "prettier --ignore-path ./.eslintignore --ignore-unknown --write .",
     "boxplot": "parcel examples/boxplot/index.html",
-    "simple": "parcel examples/simple/index.html"
+    "kitchensink": "parcel examples/kitchensink/index.html",
+    "shapes": "parcel examples/shapes/index.html"
   },
   "husky": {
     "hooks": {
@@ -54,8 +55,8 @@
     "typescript": "4"
   },
   "dependencies": {
-    "@aicacia/ecs": "git+https://git@github.com/aicacia/ts-ecs",
-    "@aicacia/ecs-game": "git+https://git@github.com/aicacia/ts-ecs-game",
+    "@aicacia/ecs": "aicacia/ts-ecs",
+    "@aicacia/ecs-game": "aicacia/ts-ecs-game",
     "@aicacia/core": "0",
     "gl-matrix": "3"
   },

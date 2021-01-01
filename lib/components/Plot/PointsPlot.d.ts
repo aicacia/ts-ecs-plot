@@ -6,4 +6,5 @@ export declare class PointsPlot extends PlotSection {
     getPoints(): vec2[];
     addPoint(...points: vec2[]): this;
     setPoints(points: vec2[]): this;
+    getY(x: number): import("@aicacia/core").Option<number>;
 }

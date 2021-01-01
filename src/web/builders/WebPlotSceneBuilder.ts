@@ -7,7 +7,7 @@ import {
   PlotCtxRendererHandler,
   LineCtxRendererHandler,
   PointCtxRendererHandler,
-} from "./plugins";
+} from "../plugins";
 import {
   CtxRenderer,
   UITextCtxRendererHandler,
@@ -15,17 +15,17 @@ import {
   WebCanvas,
   WebEventListener,
 } from "@aicacia/ecs-game/lib/web";
-import { PlotSceneBuilder } from "../PlotSceneBuilder";
+import { PlotSceneBuilder } from "../..";
 
 export class WebPlotSceneBuilder extends PlotSceneBuilder {
   constructor(canvas: WebCanvas) {
     super();
 
-    this.scene
+    this.value
       .getRequiredPlugin(Input)
       .addEventListener(new WebEventListener(canvas.getElement()));
 
-    this.scene.addPlugin(
+    this.value.addPlugin(
       new CtxRenderer(
         canvas,
         canvas.getElement().getContext("2d") as CanvasRenderingContext2D
