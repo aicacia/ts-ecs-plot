@@ -16,12 +16,13 @@
     "clean": "rm -rf ./lib",
     "lint": "eslint . --fix",
     "doc": "typedoc --entryPoints src",
+    "prettier": "prettier --ignore-path ./.eslintignore --ignore-unknown --write .",
     "boxplot": "parcel examples/boxplot/index.html",
     "simple": "parcel examples/simple/index.html"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run coverage && npm run prepublishOnly"
+      "pre-commit": "npm run prettier && npm run lint && npm run coverage && npm run prepublishOnly"
     }
   },
   "keywords": [
