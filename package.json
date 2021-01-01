@@ -54,8 +54,8 @@
     "typescript": "4"
   },
   "dependencies": {
-    "@aicacia/ecs": "git+https://git@gitlab.com/aicacia/libs/ts-ecs",
-    "@aicacia/ecs-game": "git+https://git@gitlab.com/aicacia/libs/ts-ecs-game",
+    "@aicacia/ecs": "git+https://git@github.com/aicacia/ts-ecs",
+    "@aicacia/ecs-game": "git+https://git@github.com/aicacia/ts-ecs-game",
     "@aicacia/core": "0",
     "gl-matrix": "3"
   },

@@ -33,7 +33,7 @@ export class PlotSceneBuilder {
   }
 
   eventLoop() {
-    this.scene.addPlugin(new EventLoop(this.scene.getRequiredPlugin(Input)));
+    this.scene.addPlugin(new EventLoop());
     return this;
   }
 
