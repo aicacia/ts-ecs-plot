@@ -5,10 +5,10 @@ export declare class PlotSceneBuilder extends Builder<Scene> {
     loop(): this;
     eventLoop(): this;
     disableCameraControl(): this;
-    entity(tags: string[], updater: (grid: Entity) => Entity): this;
-    grid(updater: (grid: Entity) => Entity): this;
-    axis(updater: (axis: Entity) => Entity): this;
-    camera(updater: (camera: Entity) => Entity): this;
+    entity(tags: string[], updater: (grid: Entity) => void): this;
+    grid(updater: (grid: Entity) => void): this;
+    axis(updater: (axis: Entity) => void): this;
+    camera(updater: (camera: Entity) => void): this;
     maintain(): this;
     build(): Scene;
 }

@@ -1,4 +1,4 @@
-import { vec4 } from "gl-matrix";
+import { vec2, vec4 } from "gl-matrix";
 import { Component } from "@aicacia/ecs";
 import { PointManager } from "./PointManager";
 export declare enum PointType {
@@ -32,4 +32,5 @@ export declare class Point extends Component {
     set(data: PointData): this;
     update(updater: (data: PointData) => PointData): this;
     get(): PointData;
+    getClosestPointTo(out: vec2, _point: vec2): vec2;
 }

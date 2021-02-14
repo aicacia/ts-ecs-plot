@@ -27,4 +27,5 @@ export declare class Line extends Component {
     getColor(): import("gl-matrix").mat2;
     getStartPosition(out: vec2): vec2;
     getEndPosition(out: vec2): vec2;
+    getClosestPointTo(out: vec2, point: vec2): vec2;
 }

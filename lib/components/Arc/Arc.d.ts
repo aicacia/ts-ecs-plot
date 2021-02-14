@@ -31,4 +31,5 @@ export declare class Arc extends Component {
     getDirection(): Direction;
     setColor(color: vec4): this;
     getColor(): import("gl-matrix").mat2;
+    getClosestPointTo(out: vec2, point: vec2): vec2;
 }
