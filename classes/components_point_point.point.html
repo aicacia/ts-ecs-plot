@@ -96,6 +96,8 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="components_point_point.point.html#data" class="tsd-kind-icon">data</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="components_point_point.point.html#manager" class="tsd-kind-icon">Manager</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="components_point_point.point.html#capturerejectionsymbol" class="tsd-kind-icon">capture<wbr>Rejection<wbr>Symbol</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="components_point_point.point.html#capturerejections" class="tsd-kind-icon">capture<wbr>Rejections</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="components_point_point.point.html#defaultmaxlisteners" class="tsd-kind-icon">default<wbr>Max<wbr>Listeners</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="components_point_point.point.html#errormonitor" class="tsd-kind-icon">error<wbr>Monitor</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="components_point_point.point.html#requiredcomponents" class="tsd-kind-icon">required<wbr>Components</a></li>
@@ -112,6 +114,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_point_point.point.html#eventnames" class="tsd-kind-icon">event<wbr>Names</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_point_point.point.html#fromjson" class="tsd-kind-icon">fromJSON</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_point_point.point.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="components_point_point.point.html#getclosestpointto" class="tsd-kind-icon">get<wbr>Closest<wbr>Point<wbr>To</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external"><a href="components_point_point.point.html#getcomponent" class="tsd-kind-icon">get<wbr>Component</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_point_point.point.html#getconstructor" class="tsd-kind-icon">get<wbr>Constructor</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-external"><a href="components_point_point.point.html#getentity" class="tsd-kind-icon">get<wbr>Entity</a></li>
@@ -157,6 +160,8 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="components_point_point.point.html#istofromjsonenabled" class="tsd-kind-icon">is<wbr>ToFromJSONEnabled</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="components_point_point.point.html#listenercount-1" class="tsd-kind-icon">listener<wbr>Count</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static tsd-is-external"><a href="components_point_point.point.html#newfromjson" class="tsd-kind-icon">new<wbr>FromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="components_point_point.point.html#on-1" class="tsd-kind-icon">on</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="components_point_point.point.html#once-1" class="tsd-kind-icon">once</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external"><a href="components_point_point.point.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
 							</ul>
 						</section>
@@ -175,7 +180,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@types/node/events.d.ts:41</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:23</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -197,7 +202,7 @@
 					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="components_point_point.pointdata.html" class="tsd-signature-type">PointData</a><span class="tsd-signature-symbol"> = new PointData()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Point/Point.ts#L69">src/components/Point/Point.ts:69</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9b56d6b/src/components/Point/Point.ts#L72">src/components/Point/Point.ts:72</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -207,9 +212,34 @@
 					<div class="tsd-signature tsd-kind-icon">Manager<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">typeof </span><a href="components_point_pointmanager.pointmanager.html" class="tsd-signature-type">PointManager</a><span class="tsd-signature-symbol"> = PointManager</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Point/Point.ts#L67">src/components/Point/Point.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9b56d6b/src/components/Point/Point.ts#L70">src/components/Point/Point.ts:70</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="capturerejectionsymbol" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> <span class="tsd-flag ts-flagStatic">Static</span> capture<wbr>Rejection<wbr>Symbol</h3>
+					<div class="tsd-signature tsd-kind-icon">capture<wbr>Rejection<wbr>Symbol<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">unique </span><span class="tsd-signature-type">symbol</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/@types/node/events.d.ts:43</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="capturerejections" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> capture<wbr>Rejections</h3>
+					<div class="tsd-signature tsd-kind-icon">capture<wbr>Rejections<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/@types/node/events.d.ts:49</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Sets or gets the default captureRejection value for all emitters.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 					<a name="defaultmaxlisteners" class="tsd-anchor"></a>
@@ -217,7 +247,7 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Max<wbr>Listeners<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/@types/node/events.d.ts:45</li>
+							<li>Defined in node_modules/@types/node/events.d.ts:50</li>
 						</ul>
 					</aside>
 				</section>
@@ -227,7 +257,7 @@
 					<div class="tsd-signature tsd-kind-icon">error<wbr>Monitor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">unique </span><span class="tsd-signature-type">symbol</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/@types/node/events.d.ts:55</li>
+							<li>Defined in node_modules/@types/node/events.d.ts:42</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -247,7 +277,7 @@
 					<div class="tsd-signature tsd-kind-icon">required<wbr>Components<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IRequirement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Component</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:8</li>
+							<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:13</li>
 						</ul>
 					</aside>
 				</section>
@@ -257,7 +287,7 @@
 					<div class="tsd-signature tsd-kind-icon">required<wbr>Plugins<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IRequirement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Plugin</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:9</li>
+							<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:14</li>
 						</ul>
 					</aside>
 				</section>
@@ -404,10 +434,36 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Point/Point.ts#L79">src/components/Point/Point.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9b56d6b/src/components/Point/Point.ts#L82">src/components/Point/Point.ts:82</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="components_point_point.pointdata.html" class="tsd-signature-type">PointData</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getclosestpointto" class="tsd-anchor"></a>
+					<h3>get<wbr>Closest<wbr>Point<wbr>To</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Closest<wbr>Point<wbr>To<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span>, _point<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">vec2</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9b56d6b/src/components/Point/Point.ts#L86">src/components/Point/Point.ts:86</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+								<li>
+									<h5>_point: <span class="tsd-signature-type">vec2</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">vec2</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -421,7 +477,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:18</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:23</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -467,7 +523,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:30</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:35</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Entity</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -484,7 +540,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:42</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:47</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -507,7 +563,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:15</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:20</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -547,7 +603,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:20</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:25</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -576,7 +632,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:19</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:24</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -605,7 +661,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:16</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:21</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IRequirement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Component</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -622,7 +678,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:31</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:36</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Entity</span></h4>
@@ -639,7 +695,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:43</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:48</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -662,7 +718,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:21</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:26</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -691,7 +747,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:17</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:22</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IRequirement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Plugin</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -708,7 +764,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:33</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:38</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Scene</span></h4>
@@ -725,7 +781,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:45</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:50</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -754,7 +810,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:32</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:37</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Option</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Scene</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -771,7 +827,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:44</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:49</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -840,35 +896,29 @@
 					<a name="off" class="tsd-anchor"></a>
 					<h3>off</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="components_point_point.point.html" class="tsd-signature-type">Point</a></li>
+						<li class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;add-to-scene&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;remove-from-scene&quot;</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="components_point_point.point.html" class="tsd-signature-type">Point</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@types/node/events.d.ts:66</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:9</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
+									<h5>event: <span class="tsd-signature-type">&quot;add-to-scene&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;remove-from-scene&quot;</span></h5>
 								</li>
 								<li>
-									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<h5>listener: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-signature">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-external">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-														</li>
-													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 												</li>
 											</ul>
@@ -890,7 +940,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:4</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:8</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -928,7 +978,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:48</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:53</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="components_point_point.point.html" class="tsd-signature-type">Point</a></h4>
@@ -945,7 +995,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:51</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:56</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="components_point_point.point.html" class="tsd-signature-type">Point</a></h4>
@@ -962,7 +1012,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:47</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:52</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="components_point_point.point.html" class="tsd-signature-type">Point</a></h4>
@@ -979,7 +1029,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:46</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:51</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="components_point_point.point.html" class="tsd-signature-type">Point</a></h4>
@@ -996,7 +1046,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:49</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:54</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="components_point_point.point.html" class="tsd-signature-type">Point</a></h4>
@@ -1013,7 +1063,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:50</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:55</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="components_point_point.point.html" class="tsd-signature-type">Point</a></h4>
@@ -1252,7 +1302,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Point/Point.ts#L71">src/components/Point/Point.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9b56d6b/src/components/Point/Point.ts#L74">src/components/Point/Point.ts:74</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1315,7 +1365,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9fe3d63/src/components/Point/Point.ts#L75">src/components/Point/Point.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/aicacia/ts-ecs-plot/blob/9b56d6b/src/components/Point/Point.ts#L78">src/components/Point/Point.ts:78</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1385,7 +1435,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:10</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:15</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1408,7 +1458,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:11</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:16</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IRequirement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Component</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -1425,7 +1475,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:12</li>
+									<li>Defined in node_modules/@aicacia/ecs/lib/Component.d.ts:17</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IRequirement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Plugin</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -1476,7 +1526,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in node_modules/@types/node/events.d.ts:44</li>
+									<li>Defined in node_modules/@types/node/events.d.ts:31</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1525,6 +1575,76 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="on-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> on</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>emitter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventEmitter</span>, event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AsyncIterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/@types/node/events.d.ts:28</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>emitter: <span class="tsd-signature-type">EventEmitter</span></h5>
+								</li>
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AsyncIterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+					<a name="once-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> once</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>emitter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeEventTarget</span>, event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>emitter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DOMEventTarget</span>, event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/@types/node/events.d.ts:26</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>emitter: <span class="tsd-signature-type">NodeEventTarget</span></h5>
+								</li>
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/@types/node/events.d.ts:27</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>emitter: <span class="tsd-signature-type">DOMEventTarget</span></h5>
+								</li>
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1578,6 +1698,12 @@
 								<a href="components_point_point.point.html#manager" class="tsd-kind-icon">Manager</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="components_point_point.point.html#capturerejectionsymbol" class="tsd-kind-icon">capture<wbr>Rejection<wbr>Symbol</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="components_point_point.point.html#capturerejections" class="tsd-kind-icon">capture<wbr>Rejections</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
 								<a href="components_point_point.point.html#defaultmaxlisteners" class="tsd-kind-icon">default<wbr>Max<wbr>Listeners</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static tsd-is-external">
@@ -1609,6 +1735,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="components_point_point.point.html#get" class="tsd-kind-icon">get</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="components_point_point.point.html#getclosestpointto" class="tsd-kind-icon">get<wbr>Closest<wbr>Point<wbr>To</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-external">
 								<a href="components_point_point.point.html#getcomponent" class="tsd-kind-icon">get<wbr>Component</a>
@@ -1744,6 +1873,12 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static tsd-is-external">
 								<a href="components_point_point.point.html#newfromjson" class="tsd-kind-icon">new<wbr>FromJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="components_point_point.point.html#on-1" class="tsd-kind-icon">on</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
+								<a href="components_point_point.point.html#once-1" class="tsd-kind-icon">once</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static tsd-is-external">
 								<a href="components_point_point.point.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
