@@ -6,4 +6,5 @@ export {
   PlotCtxRendererHandler,
   LineCtxRendererHandler,
   PointCtxRendererHandler,
+  PointerCtxRendererHandler,
 } from "./renderers";

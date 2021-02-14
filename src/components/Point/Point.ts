@@ -1,6 +1,7 @@
-import { vec4 } from "gl-matrix";
+import { vec2, vec4 } from "gl-matrix";
 import { Component } from "@aicacia/ecs";
 import { PointManager } from "./PointManager";
+import { TransformComponent } from "@aicacia/ecs-game";
 
 export enum PointType {
   None = "None",
@@ -63,6 +64,8 @@ export class PointData {
   }
 }
 
+const VEC2_0 = vec2.create();
+
 export class Point extends Component {
   static Manager = PointManager;
 
@@ -78,5 +81,14 @@ export class Point extends Component {
   }
   get() {
     return this.data;
+  }
+
+  getClosestPointTo(out: vec2, _point: vec2): vec2 {
+    return vec2.copy(
+      out,
+      TransformComponent.getRequiredTransform(
+        this.getRequiredEntity()
+      ).getPosition2(VEC2_0)
+    );
   }
 }

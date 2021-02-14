@@ -7,6 +7,7 @@ import {
   PlotCtxRendererHandler,
   LineCtxRendererHandler,
   PointCtxRendererHandler,
+  PointerCtxRendererHandler,
 } from "../plugins";
 import {
   CtxRenderer,
@@ -38,7 +39,8 @@ export class WebPlotSceneBuilder extends PlotSceneBuilder {
         new PlotCtxRendererHandler(),
         new LineCtxRendererHandler(),
         new PointCtxRendererHandler(),
-        new UITextCtxRendererHandler()
+        new UITextCtxRendererHandler(),
+        new PointerCtxRendererHandler()
       )
     );
   }

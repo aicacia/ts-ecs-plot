@@ -5,8 +5,8 @@ export abstract class Builder<T> {
     this.value = value;
   }
 
-  update(updater: (value: T) => T) {
-    this.value = updater(this.value);
+  update(updater: (value: T) => void) {
+    updater(this.value);
     return this;
   }
 

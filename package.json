@@ -17,13 +17,15 @@
     "lint": "eslint . --fix",
     "doc": "typedoc --entryPoints src",
     "prettier": "prettier --ignore-path ./.eslintignore --ignore-unknown --write .",
+    "preCommit": "npm run prettier && npm run lint && npm run coverage && npm run prepublishOnly",
     "boxplot": "parcel examples/boxplot/index.html",
     "kitchensink": "parcel examples/kitchensink/index.html",
-    "shapes": "parcel examples/shapes/index.html"
+    "shapes": "parcel examples/shapes/index.html",
+    "lines": "parcel examples/lines/index.html"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier && npm run lint && npm run coverage && npm run prepublishOnly"
+      "pre-commit": "npm run preCommit"
     }
   },
   "keywords": [
@@ -50,14 +52,14 @@
     "tap-spec": "5",
     "tape": "5",
     "ts-node": "9",
-    "typedoc": "beta",
     "tslib": "2",
+    "typedoc": "beta",
     "typescript": "4"
   },
   "dependencies": {
+    "@aicacia/core": "0",
     "@aicacia/ecs": "aicacia/ts-ecs",
     "@aicacia/ecs-game": "aicacia/ts-ecs-game",
-    "@aicacia/core": "0",
     "gl-matrix": "3"
   },
   "peerDependencies": {

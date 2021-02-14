@@ -1,7 +1,7 @@
 import { Transform2D } from "@aicacia/ecs-game";
 import { WebCanvas } from "@aicacia/ecs-game/lib/web";
 import { vec2 } from "gl-matrix";
-import { ShapeBuilder } from "../../src";
+import { ShapeBuilder, ShapePoint, Pointer } from "../../src";
 import { WebPlotSceneBuilder } from "../../src/web";
 
 function onLoad() {
@@ -9,6 +9,7 @@ function onLoad() {
       document.getElementById("canvas") as HTMLCanvasElement
     ),
     scene = new WebPlotSceneBuilder(canvas)
+      .camera((entity) => entity.addComponent(new Pointer()))
       .update((scene) =>
         scene.addEntity(
           new ShapeBuilder()
@@ -19,9 +20,9 @@ function onLoad() {
               return entity;
             })
             .addPoint(
-              vec2.fromValues(0, 0),
-              vec2.fromValues(0, 1),
-              vec2.fromValues(-1, 1)
+              new ShapePoint(vec2.fromValues(0, 0)),
+              new ShapePoint(vec2.fromValues(0, 1)),
+              new ShapePoint(vec2.fromValues(-1, 1))
             )
             .build()
         )

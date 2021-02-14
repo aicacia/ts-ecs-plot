@@ -1,4 +1,9 @@
-export { Builder, ShapeBuilder, PlotSceneBuilder } from "./builders";
+export {
+  Builder,
+  ShapeBuilder,
+  ShapePoint,
+  PlotSceneBuilder,
+} from "./builders";
 export {
   Arc,
   ArcManager,
@@ -16,6 +21,7 @@ export {
   Line,
   LineType,
   LineManager,
+  Pointer,
   Plot,
   PlotManager,
   PlotSection,

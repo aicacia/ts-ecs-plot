@@ -33,7 +33,7 @@ export class LineCtxRendererHandler extends CtxRendererHandler {
     this.getManager(LineManager).map((manager) =>
       manager.getComponents().forEach((line) =>
         renderer.render((ctx) => {
-          ctx.fillStyle = toRgba(line.getColor());
+          ctx.strokeStyle = toRgba(line.getColor());
           ctx.beginPath();
 
           setLineType(ctx, line.getType());

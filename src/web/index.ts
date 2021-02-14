@@ -7,4 +7,5 @@ export {
   PlotCtxRendererHandler,
   LineCtxRendererHandler,
   PointCtxRendererHandler,
+  PointerCtxRendererHandler,
 } from "./plugins";

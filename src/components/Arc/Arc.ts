@@ -9,8 +9,8 @@ export enum Direction {
   CCW = -1,
 }
 
-const ARC_VEC2_0 = vec2.create(),
-  ARC_VEC2_1 = vec2.create();
+const VEC2_0 = vec2.create(),
+  VEC2_1 = vec2.create();
 
 export class Arc extends Component {
   static Manager = ArcManager;
@@ -70,22 +70,22 @@ export class Arc extends Component {
   getStartAngle() {
     return getAngleFromPoint(
       vec2.sub(
-        ARC_VEC2_0,
-        this.getStartPosition(ARC_VEC2_0),
+        VEC2_0,
+        this.getStartPosition(VEC2_0),
         TransformComponent.getRequiredTransform(
           this.getRequiredEntity()
-        ).getPosition2(ARC_VEC2_1)
+        ).getPosition2(VEC2_1)
       )
     );
   }
   getEndAngle() {
     return getAngleFromPoint(
       vec2.sub(
-        ARC_VEC2_0,
-        this.getEndPosition(ARC_VEC2_0),
+        VEC2_0,
+        this.getEndPosition(VEC2_0),
         TransformComponent.getRequiredTransform(
           this.getRequiredEntity()
-        ).getPosition2(ARC_VEC2_1)
+        ).getPosition2(VEC2_1)
       )
     );
   }
@@ -107,5 +107,25 @@ export class Arc extends Component {
   }
   getColor() {
     return this.color;
+  }
+
+  getClosestPointTo(out: vec2, point: vec2): vec2 {
+    const distanceToCenter = vec2.sub(
+        VEC2_0,
+        TransformComponent.getRequiredTransform(
+          this.getRequiredEntity()
+        ).getLocalPosition2(VEC2_1),
+        point
+      ),
+      direction = vec2.normalize(VEC2_1, distanceToCenter),
+      angle = getAngleFromPoint(direction),
+      endAngle = this.getStartAngle(),
+      startAngle = this.getEndAngle();
+
+    if (angle >= startAngle && angle <= endAngle) {
+      return vec2.scaleAndAdd(out, distanceToCenter, direction, this.radius);
+    } else {
+      return vec2.scaleAndAdd(out, distanceToCenter, direction, -this.radius);
+    }
   }
 }

@@ -3,12 +3,16 @@ import { Component, Entity } from "@aicacia/ecs";
 import { TransformComponent } from "@aicacia/ecs-game";
 import { LineManager } from "./LineManager";
 import { none, Option } from "@aicacia/core";
+import { projectPointOntoLine } from "../../projectPointOntoLine";
 
 export enum LineType {
   Solid = "solid",
   Dashed = "dashed",
   Dotted = "dotted",
 }
+
+const VEC2_0 = vec2.create(),
+  VEC2_1 = vec2.create();
 
 export class Line extends Component {
   static Manager = LineManager;
@@ -74,5 +78,14 @@ export class Line extends Component {
       .flatMap(TransformComponent.getTransform)
       .ifSome((transform) => transform.getPosition2(out));
     return out;
+  }
+
+  getClosestPointTo(out: vec2, point: vec2): vec2 {
+    return projectPointOntoLine(
+      out,
+      point,
+      this.getStartPosition(VEC2_0),
+      this.getEndPosition(VEC2_1)
+    );
   }
 }

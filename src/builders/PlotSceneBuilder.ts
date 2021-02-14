@@ -51,17 +51,17 @@ export class PlotSceneBuilder extends Builder<Scene> {
     });
   }
 
-  entity(tags: string[], updater: (grid: Entity) => Entity) {
+  entity(tags: string[], updater: (grid: Entity) => void) {
     this.value.findWithTags(tags).map(updater);
     return this;
   }
-  grid(updater: (grid: Entity) => Entity) {
+  grid(updater: (grid: Entity) => void) {
     return this.entity(["grid"], updater);
   }
-  axis(updater: (axis: Entity) => Entity) {
+  axis(updater: (axis: Entity) => void) {
     return this.entity(["axis"], updater);
   }
-  camera(updater: (camera: Entity) => Entity) {
+  camera(updater: (camera: Entity) => void) {
     return this.entity(["camera"], updater);
   }
 

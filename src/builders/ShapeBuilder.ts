@@ -1,22 +1,51 @@
 import { Entity } from "@aicacia/ecs";
 import { Transform2D, TransformComponent } from "@aicacia/ecs-game";
 import { vec2 } from "gl-matrix";
-import { Arc, Line, Point } from "../components";
+import { Arc, Line, Point, PointData } from "../components";
 import { Builder } from "./Builder";
 
-const VEC2_0 = vec2.create();
+export class ShapePoint {
+  protected position = vec2.create();
+  protected pointData = new PointData();
+
+  constructor(position: vec2) {
+    vec2.copy(this.position, position);
+  }
+
+  getPosition() {
+    return this.position;
+  }
+  setPosition(position: vec2) {
+    vec2.copy(this.position, position);
+    return this;
+  }
+  updatePosition(updater: (position: vec2) => vec2) {
+    return this.setPosition(updater(this.position));
+  }
+
+  getPointData() {
+    return this.pointData;
+  }
+  setPointData(pointData: PointData) {
+    this.pointData = pointData;
+    return this;
+  }
+  updatePointData(updater: (pointData: PointData) => PointData) {
+    return this.setPointData(updater(this.pointData));
+  }
+}
 
 export class ShapeBuilder extends Builder<Entity> {
-  protected points: vec2[] = [];
+  protected points: ShapePoint[] = [];
 
   constructor() {
     super(new Entity().addTag("shape").addComponent(new Transform2D()));
   }
 
-  addPoint(...points: vec2[]) {
+  addPoint(...points: ShapePoint[]) {
     return this.addPoints(points);
   }
-  addPoints(points: vec2[]) {
+  addPoints(points: ShapePoint[]) {
     this.points.push(...points);
     return this;
   }
@@ -26,7 +55,10 @@ export class ShapeBuilder extends Builder<Entity> {
       points.push(
         new Entity()
           .addTag("point", toAlphabetic(index))
-          .addComponent(new Point(), new Transform2D().setLocalPosition2(point))
+          .addComponent(
+            new Point().set(point.getPointData()),
+            new Transform2D().setLocalPosition2(point.getPosition())
+          )
       );
       return points;
     }, []);
