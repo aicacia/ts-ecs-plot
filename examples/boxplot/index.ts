@@ -11,9 +11,7 @@ function onLoad() {
     ).set(512, 512),
     scene = new WebPlotSceneBuilder(canvas)
       .camera((entity) => {
-        entity
-          .getRequiredComponent(Transform2D)
-          .setLocalPosition2(vec2.fromValues(5, 5));
+        entity.getRequiredComponent(Transform2D).setLocalPosition2([5, 5]);
         return entity;
       })
       .update((scene) => {
@@ -21,7 +19,7 @@ function onLoad() {
           new Entity()
             .addTag("boxplot")
             .addComponent(
-              new Transform2D().setLocalPosition(vec2.fromValues(5, 2)),
+              new Transform2D().setLocalPosition([5, 2]),
               new BoxPlot().scale(5)
             )
             .addChild(

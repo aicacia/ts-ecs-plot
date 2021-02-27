@@ -2,6 +2,7 @@ import { vec2 } from "gl-matrix";
 import { Component } from "@aicacia/ecs";
 import { Camera2D, Input } from "@aicacia/ecs-game";
 import { PointerManager } from "./PointerManager";
+import { hasGetClosestPointTo } from "../../IGetClosestPointTo";
 
 const VEC2_0 = vec2.create(),
   VEC2_1 = vec2.create();
@@ -40,8 +41,8 @@ export class Pointer extends Component {
 
     this.getRequiredScene().forEachEntity((entity) => {
       for (const component of entity.getComponents().values()) {
-        if (typeof (component as any).getClosestPointTo === "function") {
-          const closestPoint = (component as any).getClosestPointTo(
+        if (hasGetClosestPointTo(component)) {
+          const closestPoint = component.getClosestPointTo(
               VEC2_0,
               mousePosition
             ),

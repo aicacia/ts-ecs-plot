@@ -33,10 +33,10 @@ export class LineCtxRendererHandler extends CtxRendererHandler {
     this.getManager(LineManager).map((manager) =>
       manager.getComponents().forEach((line) =>
         renderer.render((ctx) => {
-          ctx.strokeStyle = toRgba(line.getColor());
+          ctx.strokeStyle = toRgba(line.getData().getColor());
           ctx.beginPath();
 
-          setLineType(ctx, line.getType());
+          setLineType(ctx, line.getData().getType());
 
           const start = line.getStartPosition(VEC2_0);
           ctx.moveTo(start[0], start[1]);

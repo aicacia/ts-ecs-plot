@@ -16,7 +16,7 @@ export class PointerCtxRendererHandler extends CtxRendererHandler {
     this.getManager(PointerManager).map((manager) =>
       manager.getComponents().forEach((pointer) =>
         renderer.render((ctx) => {
-          if (vec2.sqrDist(pointer.getMouse(), pointer.getPoint()) < 1) {
+          if (vec2.sqrDist(pointer.getMouse(), pointer.getPoint()) < 0.1) {
             drawPoint(ctx, pointer.getMouse(), POINT_DATA, scale);
 
             ctx.strokeStyle = toRgba(RED);

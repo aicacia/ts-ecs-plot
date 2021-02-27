@@ -1,15 +1,10 @@
-import { vec2, vec4 } from "gl-matrix";
+import { vec2 } from "gl-matrix";
 import { Component, Entity } from "@aicacia/ecs";
 import { TransformComponent } from "@aicacia/ecs-game";
 import { LineManager } from "./LineManager";
 import { none, Option } from "@aicacia/core";
 import { projectPointOntoLine } from "../../projectPointOntoLine";
-
-export enum LineType {
-  Solid = "solid",
-  Dashed = "dashed",
-  Dotted = "dotted",
-}
+import { LineData } from "./LineData";
 
 const VEC2_0 = vec2.create(),
   VEC2_1 = vec2.create();
@@ -19,9 +14,7 @@ export class Line extends Component {
 
   private start: Option<Entity> = none();
   private end: Option<Entity> = none();
-  private lineWidth = 1.0;
-  private type: LineType = LineType.Solid;
-  private color: vec4 = vec4.fromValues(0, 0, 0, 1.0);
+  private data: LineData = new LineData();
 
   setStart(start: Entity) {
     this.start.replace(start);
@@ -43,28 +36,15 @@ export class Line extends Component {
     return this.setStart(start).setEnd(end);
   }
 
-  setLineWidth(lineWidth: number) {
-    this.lineWidth = lineWidth;
+  setData(data: LineData) {
+    this.data = data;
     return this;
   }
-  getLineWidth() {
-    return this.lineWidth;
+  updateData(updater: (data: LineData) => LineData) {
+    return this.setData(updater(this.data));
   }
-
-  setType(type: LineType) {
-    this.type = type;
-    return this;
-  }
-  getType() {
-    return this.type;
-  }
-
-  setColor(color: vec4) {
-    vec4.copy(this.color, color);
-    return this;
-  }
-  getColor() {
-    return this.color;
+  getData() {
+    return this.data;
   }
 
   getStartPosition(out: vec2) {

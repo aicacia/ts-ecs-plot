@@ -1,9 +1,4 @@
-export {
-  Builder,
-  ShapeBuilder,
-  ShapePoint,
-  PlotSceneBuilder,
-} from "./builders";
+export { Builder, ShapeBuilder, PlotSceneBuilder } from "./builders";
 export {
   Arc,
   ArcManager,
@@ -29,3 +24,4 @@ export {
   F,
   FunctionPlot,
 } from "./components";
+export { IGetClosestPointTo, hasGetClosestPointTo } from "./IGetClosestPointTo";

@@ -10,7 +10,8 @@ export enum Direction {
 }
 
 const VEC2_0 = vec2.create(),
-  VEC2_1 = vec2.create();
+  VEC2_1 = vec2.create(),
+  VEC2_2 = vec2.create();
 
 export class Arc extends Component {
   static Manager = ArcManager;
@@ -110,22 +111,21 @@ export class Arc extends Component {
   }
 
   getClosestPointTo(out: vec2, point: vec2): vec2 {
-    const distanceToCenter = vec2.sub(
-        VEC2_0,
-        TransformComponent.getRequiredTransform(
-          this.getRequiredEntity()
-        ).getLocalPosition2(VEC2_1),
-        point
-      ),
-      direction = vec2.normalize(VEC2_1, distanceToCenter),
-      angle = getAngleFromPoint(direction),
-      endAngle = this.getStartAngle(),
-      startAngle = this.getEndAngle();
+    const endAngle = this.getStartAngle(),
+      startAngle = this.getEndAngle(),
+      position = TransformComponent.getRequiredTransform(
+        this.getRequiredEntity()
+      ).getPosition2(VEC2_0),
+      distanceToCenter = vec2.sub(VEC2_1, point, position),
+      direction = vec2.normalize(VEC2_2, distanceToCenter),
+      angle = getAngleFromPoint(direction);
 
-    if (angle >= startAngle && angle <= endAngle) {
-      return vec2.scaleAndAdd(out, distanceToCenter, direction, this.radius);
+    if (angle < startAngle) {
+      return this.getStartPosition(out);
+    } else if (angle > endAngle) {
+      return this.getEndPosition(out);
     } else {
-      return vec2.scaleAndAdd(out, distanceToCenter, direction, -this.radius);
+      return vec2.scaleAndAdd(out, position, direction, this.radius);
     }
   }
 }

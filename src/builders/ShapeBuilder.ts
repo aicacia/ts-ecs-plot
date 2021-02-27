@@ -1,51 +1,23 @@
 import { Entity } from "@aicacia/ecs";
 import { Transform2D, TransformComponent } from "@aicacia/ecs-game";
 import { vec2 } from "gl-matrix";
-import { Arc, Line, Point, PointData } from "../components";
+import { Arc, Line, Point } from "../components";
 import { Builder } from "./Builder";
-
-export class ShapePoint {
-  protected position = vec2.create();
-  protected pointData = new PointData();
-
-  constructor(position: vec2) {
-    vec2.copy(this.position, position);
-  }
-
-  getPosition() {
-    return this.position;
-  }
-  setPosition(position: vec2) {
-    vec2.copy(this.position, position);
-    return this;
-  }
-  updatePosition(updater: (position: vec2) => vec2) {
-    return this.setPosition(updater(this.position));
-  }
-
-  getPointData() {
-    return this.pointData;
-  }
-  setPointData(pointData: PointData) {
-    this.pointData = pointData;
-    return this;
-  }
-  updatePointData(updater: (pointData: PointData) => PointData) {
-    return this.setPointData(updater(this.pointData));
-  }
-}
+import { ShapeBuilderPoint } from "./ShapeBuilderPoint";
 
 export class ShapeBuilder extends Builder<Entity> {
-  protected points: ShapePoint[] = [];
+  static Point = ShapeBuilderPoint;
+
+  protected points: ShapeBuilderPoint[] = [];
 
   constructor() {
     super(new Entity().addTag("shape").addComponent(new Transform2D()));
   }
 
-  addPoint(...points: ShapePoint[]) {
+  addPoint(...points: ShapeBuilderPoint[]) {
     return this.addPoints(points);
   }
-  addPoints(points: ShapePoint[]) {
+  addPoints(points: ShapeBuilderPoint[]) {
     this.points.push(...points);
     return this;
   }
@@ -56,7 +28,7 @@ export class ShapeBuilder extends Builder<Entity> {
         new Entity()
           .addTag("point", toAlphabetic(index))
           .addComponent(
-            new Point().set(point.getPointData()),
+            new Point().setData(point.getPointData()),
             new Transform2D().setLocalPosition2(point.getPosition())
           )
       );
@@ -70,7 +42,12 @@ export class ShapeBuilder extends Builder<Entity> {
       lines.push(
         new Entity()
           .addTag("line", `${toAlphabetic(prevIndex)}-${toAlphabetic(index)}`)
-          .addComponent(new Line().setStart(prevPoint).setEnd(point))
+          .addComponent(
+            new Line()
+              .setData(this.points[index].getLineData())
+              .setStart(prevPoint)
+              .setEnd(point)
+          )
       );
 
       return lines;

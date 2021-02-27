@@ -1,4 +1,4 @@
-import { vec2, vec4 } from "gl-matrix";
+import { vec4 } from "gl-matrix";
 import { Component, Entity } from "@aicacia/ecs";
 import { Time, Transform2D, HALF_PI } from "@aicacia/ecs-game";
 import { WebCanvas } from "@aicacia/ecs-game/lib/web";
@@ -43,9 +43,9 @@ function onLoad() {
         const staticLineEnd = new Entity()
             .addTag("static-line-end")
             .addComponent(
-              new Transform2D().setLocalPosition2(vec2.fromValues(9, 0)),
-              new Point().update((data) =>
-                data.setBorder(true).setColor(vec4.fromValues(0, 0, 0, 0))
+              new Transform2D().setLocalPosition2([9, 0]),
+              new Point().updateData((data) =>
+                data.setBorder(true).setColor([0, 0, 0, 0])
               )
             ),
           staticLineStart = new Entity()
@@ -58,12 +58,12 @@ function onLoad() {
             .addComponent(
               new Transform2D(),
               new Line()
-                .setType(LineType.Dashed)
+                .updateData((data) => data.setType(LineType.Dashed))
                 .set(staticLineStart, staticLineEnd)
             ),
           lineEnd = new Entity().addTag("line-end").addComponent(
-            new Transform2D().setLocalPosition2(vec2.fromValues(9, 0)),
-            new Point().update((data) => data.setType(PointType.Triangle))
+            new Transform2D().setLocalPosition2([9, 0]),
+            new Point().updateData((data) => data.setType(PointType.Triangle))
           ),
           lineStart = new Entity()
             .addTag("line-start")
@@ -84,11 +84,8 @@ function onLoad() {
               new FunctionPlot((x) => Math.tan(x)).setFAsymptote(
                 (n) => HALF_PI + Math.PI * n
               ),
-              new PointsPlot(
-                vec2.fromValues(2, 2),
-                vec2.fromValues(2, 5)
-              ).updateEndPoint((endPoint) =>
-                endPoint.setColor(vec4.fromValues(0, 0, 0, 0)).setBorder(true)
+              new PointsPlot([2, 2], [2, 5]).updateEndPoint((endPoint) =>
+                endPoint.setColor([0, 0, 0, 0]).setBorder(true)
               )
             )
           ),

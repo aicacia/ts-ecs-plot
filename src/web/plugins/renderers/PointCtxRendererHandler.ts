@@ -63,7 +63,7 @@ export class PointCtxRendererHandler extends CtxRendererHandler {
           .flatMap(TransformComponent.getTransform)
           .map((transform) =>
             renderer.render((ctx) => {
-              drawPoint(ctx, VEC2_ZERO, point.get(), scale);
+              drawPoint(ctx, VEC2_ZERO, point.getData(), scale);
             }, transform.getMatrix2d(MAT2D_0))
           )
       )
