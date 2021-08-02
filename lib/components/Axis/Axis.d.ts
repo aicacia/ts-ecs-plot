@@ -16,9 +16,9 @@ export declare class Axis extends Component {
     private numbersEvery;
     getSize(): number;
     setSize(size: number): this;
-    getXColor(): import("gl-matrix").mat2;
+    getXColor(): vec4;
     setXColor(xColor: vec4): this;
-    getYColor(): import("gl-matrix").mat2;
+    getYColor(): vec4;
     setYColor(yColor: vec4): this;
     getXShow(): boolean;
     setXShow(xShow: boolean): this;

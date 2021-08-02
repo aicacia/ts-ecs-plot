@@ -10,6 +10,7 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "watch": "tsc -w",
     "prepublishOnly": "npm run clean && npm run build",
     "test": "ts-node node_modules/.bin/tape src/**/*.test.{ts,tsx} | tap-spec",
     "coverage": "nyc --reporter=lcov --require ts-node/register tape src/**/*.test.{ts,tsx} | tap-spec; nyc report ---reporter=text",
@@ -18,10 +19,11 @@
     "doc": "typedoc --entryPoints src",
     "prettier": "prettier --ignore-path ./.eslintignore --ignore-unknown --write .",
     "preCommit": "npm run prettier && npm run lint && npm run coverage && npm run prepublishOnly",
-    "boxplot": "parcel examples/boxplot/index.html",
-    "kitchensink": "parcel examples/kitchensink/index.html",
-    "shapes": "parcel examples/shapes/index.html",
-    "lines": "parcel examples/lines/index.html"
+    "boxplot": "parcel serve examples/boxplot/index.html",
+    "kitchensink": "parcel serve examples/kitchensink/index.html",
+    "shapes": "parcel serve examples/shapes/index.html",
+    "lines": "parcel serve examples/lines/index.html",
+    "playground": "parcel serve examples/playground/index.html"
   },
   "husky": {
     "hooks": {
@@ -41,12 +43,14 @@
     "@types/tape": "4",
     "@typescript-eslint/eslint-plugin": "4",
     "@typescript-eslint/parser": "4",
+    "algebra-latex": "^2",
+    "algebrite": "1",
     "eslint": "7",
-    "eslint-config-prettier": "7",
+    "eslint-config-prettier": "8",
     "eslint-plugin-prettier": "3",
     "husky": "4",
     "nyc": "15",
-    "parcel-bundler": "1",
+    "parcel": "next",
     "prettier": "2",
     "tap-nyc": "1",
     "tap-spec": "5",
@@ -59,7 +63,6 @@
   "dependencies": {
     "@aicacia/core": "0",
     "@aicacia/ecs": "aicacia/ts-ecs",
-    "@aicacia/ecs-game": "aicacia/ts-ecs-game",
     "gl-matrix": "3"
   },
   "peerDependencies": {

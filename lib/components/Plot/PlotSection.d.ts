@@ -13,7 +13,7 @@ export declare abstract class PlotSection {
     setLineType(lineType: LineType): this;
     getLineType(): LineType;
     setLineColor(lineColor: vec4): this;
-    getLineColor(): import("gl-matrix").mat2;
+    getLineColor(): vec4;
     setStartPoint(startPoint: PointData): this;
     getStartPoint(): PointData;
     updateStartPoint(updater: (pointData: PointData) => PointData): this;

@@ -1,4 +1,4 @@
-import { Input } from "@aicacia/ecs-game";
+import { Input } from "@aicacia/ecs";
 import {
   ArcCtxRendererHandler,
   AxisCtxRendererHandler,
@@ -11,11 +11,10 @@ import {
 } from "../plugins";
 import {
   CtxRenderer,
-  UITextCtxRendererHandler,
   SpriteCtxRendererHandler,
   WebCanvas,
   WebEventListener,
-} from "@aicacia/ecs-game/lib/web";
+} from "@aicacia/ecs/lib/web";
 import { PlotSceneBuilder } from "../..";
 
 export class WebPlotSceneBuilder extends PlotSceneBuilder {
@@ -39,7 +38,6 @@ export class WebPlotSceneBuilder extends PlotSceneBuilder {
         new PlotCtxRendererHandler(),
         new LineCtxRendererHandler(),
         new PointCtxRendererHandler(),
-        new UITextCtxRendererHandler(),
         new PointerCtxRendererHandler()
       )
     );

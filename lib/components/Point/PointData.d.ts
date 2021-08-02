@@ -15,7 +15,7 @@ export declare class PointData {
     disbleBorder(): this;
     getBorder(): boolean;
     setBorderColor(borderColor: vec4): this;
-    getBorderColor(): import("gl-matrix").mat2;
+    getBorderColor(): vec4;
     setColor(color: vec4): this;
-    getColor(): import("gl-matrix").mat2;
+    getColor(): vec4;
 }

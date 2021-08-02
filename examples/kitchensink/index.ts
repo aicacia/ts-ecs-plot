@@ -1,7 +1,6 @@
 import { vec4 } from "gl-matrix";
-import { Component, Entity } from "@aicacia/ecs";
-import { Time, Transform2D, HALF_PI } from "@aicacia/ecs-game";
-import { WebCanvas } from "@aicacia/ecs-game/lib/web";
+import { Component, Entity, Time, Transform2D, HALF_PI } from "@aicacia/ecs";
+import { WebCanvas } from "@aicacia/ecs/lib/web";
 import {
   Arc,
   Direction,
@@ -13,8 +12,8 @@ import {
   PointType,
   PointsPlot,
   Grid,
-} from "../../src";
-import { WebPlotSceneBuilder } from "../../src/web";
+} from "../../lib";
+import { WebPlotSceneBuilder } from "../../lib/web";
 
 class Rotator extends Component {
   static requiredPlugins = [Time];
@@ -107,10 +106,9 @@ function onLoad() {
       .loop()
       .build();
 
-  (document.getElementById(
-    "download"
-  ) as HTMLButtonElement).addEventListener("click", () =>
-    window.open(canvas.getImageURI())
+  (document.getElementById("download") as HTMLButtonElement).addEventListener(
+    "click",
+    () => window.open(canvas.getImageURI())
   );
 
   scene.init();

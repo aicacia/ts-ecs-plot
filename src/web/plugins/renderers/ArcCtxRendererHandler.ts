@@ -1,6 +1,6 @@
 import { vec2 } from "gl-matrix";
-import { equals, TAU, toRgba, TransformComponent } from "@aicacia/ecs-game";
-import { CtxRendererHandler } from "@aicacia/ecs-game/lib/web";
+import { equals, TAU, toRgba, TransformComponent } from "@aicacia/ecs";
+import { CtxRendererHandler } from "@aicacia/ecs/lib/web";
 import { ArcManager, Direction } from "../../../components/Arc";
 
 const VEC2_0 = vec2.create();

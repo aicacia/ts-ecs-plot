@@ -10,6 +10,6 @@ export declare class Grid extends Component {
     setSize(size: number): this;
     getLineWidth(): number;
     setLineWidth(lineWidth: number): this;
-    getColor(): import("gl-matrix").mat2;
+    getColor(): vec4;
     setColor(color: vec4): this;
 }

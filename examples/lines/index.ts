@@ -1,9 +1,9 @@
 import { Entity } from "@aicacia/ecs";
-import { Transform2D, TransformComponent } from "@aicacia/ecs-game";
-import { WebCanvas } from "@aicacia/ecs-game/lib/web";
+import { Transform2D, TransformComponent } from "@aicacia/ecs";
+import { WebCanvas } from "@aicacia/ecs/lib/web";
 import { vec2 } from "gl-matrix";
-import { Pointer, Plot, FunctionPlot, Axis } from "../../src";
-import { WebPlotSceneBuilder } from "../../src/web";
+import { Pointer, Plot, FunctionPlot, Axis } from "../../lib";
+import { WebPlotSceneBuilder } from "../../lib/web";
 
 function onLoad() {
   const canvas = document.getElementById("canvas") as HTMLCanvasElement,

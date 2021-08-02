@@ -9,5 +9,5 @@ export declare class LineData {
     setType(type: LineType): this;
     getType(): LineType;
     setColor(color: vec4): this;
-    getColor(): import("gl-matrix").mat2;
+    getColor(): vec4;
 }

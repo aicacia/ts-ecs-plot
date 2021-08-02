@@ -1,7 +1,6 @@
 import { vec2 } from "gl-matrix";
-import { Component } from "@aicacia/ecs";
+import { Component, TransformComponent } from "@aicacia/ecs";
 import { PointManager } from "./PointManager";
-import { TransformComponent } from "@aicacia/ecs-game";
 import { PointData } from "./PointData";
 
 const VEC2_0 = vec2.create();

@@ -7,7 +7,7 @@ import {
   Loop,
   Time,
   Transform2D,
-} from "@aicacia/ecs-game";
+} from "@aicacia/ecs";
 import { vec2, vec4 } from "gl-matrix";
 import { Builder } from "./Builder";
 import { Axis, Grid } from "../components";

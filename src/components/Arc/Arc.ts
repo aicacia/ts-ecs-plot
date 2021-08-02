@@ -1,6 +1,10 @@
 import { vec2, vec4 } from "gl-matrix";
-import { Component, Entity } from "@aicacia/ecs";
-import { getAngleFromPoint, TransformComponent } from "@aicacia/ecs-game";
+import {
+  Component,
+  Entity,
+  getAngleFromPoint,
+  TransformComponent,
+} from "@aicacia/ecs";
 import { ArcManager } from "./ArcManager";
 import { none, Option } from "@aicacia/core";
 

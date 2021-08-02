@@ -1,5 +1,5 @@
 import { vec2 } from "gl-matrix";
-import { CtxRendererHandler } from "@aicacia/ecs-game/lib/web";
+import { CtxRendererHandler } from "@aicacia/ecs/lib/web";
 import { PointData } from "../../../components/Point";
 export declare function drawPoint(ctx: CanvasRenderingContext2D, position: vec2, pointData: PointData, scale: number): void;
 export declare class PointCtxRendererHandler extends CtxRendererHandler {

@@ -1,4 +1,4 @@
-import { EPSILON } from "@aicacia/ecs-game";
+import { EPSILON } from "@aicacia/ecs";
 import { vec2 } from "gl-matrix";
 import { none, Option, some } from "@aicacia/core";
 import { PlotSection } from "./PlotSection";

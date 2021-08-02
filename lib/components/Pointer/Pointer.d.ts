@@ -1,6 +1,5 @@
 import { vec2 } from "gl-matrix";
-import { Component } from "@aicacia/ecs";
-import { Camera2D, Input } from "@aicacia/ecs-game";
+import { Component, Camera2D, Input } from "@aicacia/ecs";
 import { PointerManager } from "./PointerManager";
 export declare class Pointer extends Component {
     static Manager: typeof PointerManager;

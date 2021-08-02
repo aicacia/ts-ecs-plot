@@ -1,6 +1,6 @@
 import { mat2d, vec2 } from "gl-matrix";
-import { toRgba, TransformComponent } from "@aicacia/ecs-game";
-import { CtxRendererHandler } from "@aicacia/ecs-game/lib/web";
+import { toRgba, TransformComponent } from "@aicacia/ecs";
+import { CtxRendererHandler } from "@aicacia/ecs/lib/web";
 import { GridManager } from "../../../components/Grid";
 
 const VEC2_0 = vec2.create(),

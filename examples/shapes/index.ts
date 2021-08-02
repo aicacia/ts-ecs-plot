@@ -1,8 +1,8 @@
-import { Camera2D, Transform2D } from "@aicacia/ecs-game";
-import { WebCanvas } from "@aicacia/ecs-game/lib/web";
+import { Camera2D, Transform2D } from "@aicacia/ecs";
+import { WebCanvas } from "@aicacia/ecs/lib/web";
 import { vec2 } from "gl-matrix";
-import { ShapeBuilder, Pointer } from "../../src";
-import { WebPlotSceneBuilder } from "../../src/web";
+import { ShapeBuilder, Pointer } from "../../lib";
+import { WebPlotSceneBuilder } from "../../lib/web";
 
 function onLoad() {
   const canvas = new WebCanvas(

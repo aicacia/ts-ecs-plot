@@ -1,6 +1,6 @@
 import { vec2, vec4 } from "gl-matrix";
-import { toRgba } from "@aicacia/ecs-game";
-import { CtxRendererHandler } from "@aicacia/ecs-game/lib/web";
+import { toRgba } from "@aicacia/ecs";
+import { CtxRendererHandler } from "@aicacia/ecs/lib/web";
 import { PointerManager } from "../../../components/Pointer";
 import { drawPoint } from "./PointCtxRendererHandler";
 import { PointData } from "../../../components";

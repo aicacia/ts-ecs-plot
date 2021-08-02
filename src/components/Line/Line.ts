@@ -1,6 +1,5 @@
 import { vec2 } from "gl-matrix";
-import { Component, Entity } from "@aicacia/ecs";
-import { TransformComponent } from "@aicacia/ecs-game";
+import { Component, TransformComponent, Entity } from "@aicacia/ecs";
 import { LineManager } from "./LineManager";
 import { none, Option } from "@aicacia/core";
 import { projectPointOntoLine } from "../../projectPointOntoLine";

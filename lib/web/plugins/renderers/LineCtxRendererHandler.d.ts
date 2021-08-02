@@ -1,4 +1,4 @@
-import { CtxRendererHandler } from "@aicacia/ecs-game/lib/web";
+import { CtxRendererHandler } from "@aicacia/ecs/lib/web";
 import { LineType } from "../../../components/Line";
 export declare const DASHED_SEGMENTS: number[], DOTTED_SEGMENTS: number[], SOLID_SEGMENTS: never[];
 export declare function setLineType(ctx: CanvasRenderingContext2D, lineType: LineType): void;

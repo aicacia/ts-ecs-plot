@@ -12,11 +12,11 @@ export declare class BoxPlot extends Component {
     private median;
     private q3;
     private max;
-    getLineColor(): import("gl-matrix").mat2;
+    getLineColor(): vec4;
     setLineColor(lineColor: vec4): this;
-    getBoxColor(): import("gl-matrix").mat2;
+    getBoxColor(): vec4;
     setBoxColor(boxColor: vec4): this;
-    getMedianLineColor(): import("gl-matrix").mat2;
+    getMedianLineColor(): vec4;
     setMedianLineColor(medianLineColor: vec4): this;
     getWidth(): number;
     setWidth(width: number): this;

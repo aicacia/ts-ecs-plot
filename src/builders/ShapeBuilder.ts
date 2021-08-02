@@ -1,5 +1,4 @@
-import { Entity } from "@aicacia/ecs";
-import { Transform2D, TransformComponent } from "@aicacia/ecs-game";
+import { Entity, Transform2D, TransformComponent } from "@aicacia/ecs";
 import { vec2 } from "gl-matrix";
 import { Arc, Line, Point } from "../components";
 import { Builder } from "./Builder";

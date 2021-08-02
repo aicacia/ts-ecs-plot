@@ -1,4 +1,4 @@
-.cache
+.parcel-cache
 .github
 .nyc_output/
 .vscode/
@@ -7,3 +7,4 @@ dist/
 docs/
 lib/
 node_modules/
+examples/playground/mathquill-0.10.1/

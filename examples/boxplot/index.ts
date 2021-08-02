@@ -1,9 +1,9 @@
 import { Entity } from "@aicacia/ecs";
-import { Transform2D, UIText } from "@aicacia/ecs-game";
-import { WebCanvas } from "@aicacia/ecs-game/lib/web";
+import { Transform2D } from "@aicacia/ecs";
+import { WebCanvas } from "@aicacia/ecs/lib/web";
 import { vec2 } from "gl-matrix";
-import { BoxPlot } from "../../src";
-import { WebPlotSceneBuilder } from "../../src/web";
+import { BoxPlot } from "../../lib";
+import { WebPlotSceneBuilder } from "../../lib/web";
 
 function onLoad() {
   const canvas = new WebCanvas(
@@ -24,8 +24,7 @@ function onLoad() {
             )
             .addChild(
               new Entity().addComponent(
-                new Transform2D().setLocalPosition(vec2.fromValues(0, -0.5)),
-                new UIText().setText("A").setSize(12)
+                new Transform2D().setLocalPosition(vec2.fromValues(0, -0.5))
               )
             )
         );
@@ -33,10 +32,9 @@ function onLoad() {
       .eventLoop()
       .build();
 
-  (document.getElementById(
-    "download"
-  ) as HTMLButtonElement).addEventListener("click", () =>
-    window.open(canvas.getImageURI())
+  (document.getElementById("download") as HTMLButtonElement).addEventListener(
+    "click",
+    () => window.open(canvas.getImageURI())
   );
 
   scene.init();

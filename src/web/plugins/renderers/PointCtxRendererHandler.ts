@@ -1,6 +1,6 @@
 import { mat2d, vec2 } from "gl-matrix";
-import { toRgba, TransformComponent } from "@aicacia/ecs-game";
-import { CtxRendererHandler } from "@aicacia/ecs-game/lib/web";
+import { toRgba, TransformComponent } from "@aicacia/ecs";
+import { CtxRendererHandler } from "@aicacia/ecs/lib/web";
 import { PointManager, PointData, PointType } from "../../../components/Point";
 
 const VEC2_ZERO = vec2.create(),
